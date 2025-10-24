@@ -6,7 +6,7 @@ BASE_DIR = os.path.dirname(__file__)
 
 # --- Définir les critères ---
 ALLOWED_COUNTRIES = ["benelux", "france", "germany"]
-ALLOWED_DOMAINS = ["energy transition", "industrie 4.0", "new materials"]
+ALLOWED_DOMAINS = ["energy transition", "industry 4.0", "new materials"]
 
 def display_prediction_results(uploaded_saved_names):
     """

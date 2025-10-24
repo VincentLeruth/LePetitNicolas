@@ -30,6 +30,7 @@ def go_to(page_name):
         st.session_state.page = "menu"
     else:
         st.session_state.page = page_name
+    st.rerun()
 
 # --- Menu principal ---
 if st.session_state.page == "menu":
@@ -56,20 +57,28 @@ elif st.session_state.page == "analyze":
     st.write("👉 Sélectionnez un ou plusieurs fichiers PDF à analyser.")
 
     uploaded_files = upload_decks()
-    compare_uploaded_files(uploaded_files, TRANSLATED_DIR, DECKS_DIR)
-    save_uploaded_files(uploaded_files, DECKS_DIR, TRANSLATED_DIR)
+    if not st.session_state.get("saved_uploaded_files", False):
+        compare_uploaded_files(uploaded_files, TRANSLATED_DIR, DECKS_DIR)
+
+    saved_files = save_uploaded_files(uploaded_files, DECKS_DIR, TRANSLATED_DIR)
 
     # --- Étape : Vectorisation + Prédictions ---
     run_vectorize_and_predict_ui()
-    if st.session_state.get("predictions_done", False):
-        uploaded_saved_names = []
-        for file in uploaded_files:
-            original_name = file.name
-            rename_key = f"rename_{original_name}"
-            final_name = st.session_state.get(rename_key, original_name)
-            uploaded_saved_names.append(final_name)
 
-        display_prediction_results(uploaded_saved_names)
+    if st.session_state.get("predictions_done", False):
+        # On récupère la liste des fichiers réellement sauvegardés
+        saved_files_names = st.session_state.get("uploaded_files_saved_names", [])
+        if saved_files_names:
+            display_prediction_results(saved_files_names)
+
+    deck_files = [f for f in os.listdir(DECKS_DIR) if f.lower().endswith(".pdf")]
+    selected_file = st.sidebar.selectbox("📄 Sélectionnez un deck pour voir ses résultats", [""] + deck_files)
+    st.sidebar.write("⚠️ Le resultat est à retrouver en bas de la page principal dans : \n\n Résultats des prédictions par fichier uploadé.")
+    
+    # Affichage via le module display
+    if selected_file:
+        display_prediction_results(selected_file.split(sep=None, maxsplit=-1))
+        
 
     if st.button("⬅️ Retour au menu principal"):
         go_to("menu")
