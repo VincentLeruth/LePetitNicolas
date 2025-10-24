@@ -1,4 +1,4 @@
-doc;tech;domain;country;resultat
+doc;tech;domain;country;result
 247energy.pdf;hard;energy transition;benelux;
 actblade.pdf;hard;energy transition;autres;Out
 adlatusrobotics.pdf;hard;industry 4.0;germany;Very Unfavorable
@@ -278,3 +278,5 @@ yazzoom.pdf;soft;industry 4.0;benelux;
 ysenergiesmarines.pdf;hard;energy transition;france;Very Unfavorable
 zeppsolutions.pdf;hard;energy transition;benelux;Unfavorable
 zorabots.pdf;soft;industry 4.0;benelux;Unfavorable
+actronika.pdf;both;others;france;Very Unfavorable
+adlc.pdf;soft;industrie 4.0;benelux;Very Unfavorable

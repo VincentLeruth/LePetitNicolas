@@ -1,10 +1,13 @@
 import streamlit as st
 import os
-from ui.actions.upload import upload_decks
-from ui.actions.compare import compare_uploaded_files
-from ui.actions.save import save_uploaded_files 
-from ui.actions.vecto_predict import run_vectorize_and_predict_ui
-from ui.actions.display_results import display_prediction_results
+
+from ui.upload import upload_decks
+from ui.compare import compare_uploaded_files
+from ui.save import save_uploaded_files 
+from ui.vecto_predict import run_vectorize_and_predict_ui
+from ui.display_results import display_prediction_results
+
+from ui.train import run_training_ui
 
 
 # --- Chemins ---
@@ -46,8 +49,14 @@ if st.session_state.page == "menu":
 
 # --- Page entraînement ---
 elif st.session_state.page == "train":
-    st.title("🧠 Entraînement des modèles")
-    st.write("👉 Ici tu pourras lancer l'entraînement de tes modèles.")
+    st.title("✅ Vérifications et Entraînement des modèles")
+    st.write("👉 Ici tu peux labelliser les decks non traités et lancer l'entraînement des modèles.")
+
+    # 🔥 Appel du module d’entraînement (UI)
+    run_training_ui()
+
+    # Bouton retour
+    st.markdown("---")
     if st.button("⬅️ Retour au menu principal"):
         go_to("menu")
 

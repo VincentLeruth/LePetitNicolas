@@ -1,0 +1,103 @@
+# ui/train_ui.py
+import os
+import streamlit as st
+import pandas as pd
+
+from src.ml.domain.model_domain import train_domain
+from src.ml.country.model_country import train_country
+from src.ml.tech.model_tech import train_tech
+from src.ml.resultat.model_result import train_result
+
+# --- Chemins ---
+BASE_DIR = os.path.dirname(__file__)
+DECKS_DIR = os.path.join(BASE_DIR, "..", "data", "decks")
+LABELED_CSV = os.path.join(BASE_DIR, "..", "data", "labeled.csv")
+
+# --- Choix possibles pour chaque axe ---
+DOMAINS = ["energy transition", "industrie 4.0", "new materials", "others"]
+COUNTRIES = ["benelux", "france", "germany", "autres"]
+TECHS = ["soft", "hard", "both"]
+RESULTS = ["Unfavorable", "Very Unfavorable", "Interessant", "Out"]
+
+def run_training_ui():
+    st.subheader("🧠 Entraînement des modèles")
+
+    # --- Charger labeled.csv ---
+    if os.path.exists(LABELED_CSV):
+        labeled_df = pd.read_csv(LABELED_CSV, sep=";")
+    else:
+        labeled_df = pd.DataFrame(columns=["doc", "tech", "domain", "country", "result"])
+
+    # --- Lister tous les decks ---
+    all_decks = [f for f in os.listdir(DECKS_DIR) if f.endswith(".pdf")]
+
+    # --- Session state : decks restants ---
+    if "remaining_decks" not in st.session_state:
+        st.session_state.remaining_decks = [f for f in all_decks if f not in labeled_df["doc"].tolist()]
+
+    if not st.session_state.remaining_decks:
+        st.success("✅ Tous les decks ont été labellisés !")
+        if st.button("🧠 Entraîner tous les modèles"):
+            st.info("⏳ Entraînement en cours...\n\n Cela peut prendre quelques minutes.")
+            train_domain()
+            train_country()
+            train_tech()
+            train_result()
+            st.success("🎉 Tous les modèles ont été entraînés et sauvegardés !")
+        return
+
+    # --- Deck actuel à corriger ---
+    current_deck = st.session_state.remaining_decks[0]
+    st.markdown(f"### 📄 {current_deck} (encore {len(st.session_state.remaining_decks)} decks à vérifier)")
+
+    # --- Valeurs par défaut si déjà corrigé dans cette session ---
+    if "corrections" not in st.session_state:
+        st.session_state.corrections = {}
+
+    default_vals = st.session_state.corrections.get(current_deck, {})
+    tech_default = default_vals.get("tech", TECHS[0])
+    domain_default = default_vals.get("domain", DOMAINS[0])
+    country_default = default_vals.get("country", COUNTRIES[0])
+    result_default = default_vals.get("result", RESULTS[0])
+
+    # --- Listes déroulantes avec key unique ---
+    tech = st.selectbox("🧠 Technologie", TECHS, index=TECHS.index(tech_default), key=f"tech_{current_deck}")
+    domain = st.selectbox("🌍 Domaine", DOMAINS, index=DOMAINS.index(domain_default), key=f"domain_{current_deck}")
+    country = st.selectbox("🏳️ Pays", COUNTRIES, index=COUNTRIES.index(country_default), key=f"country_{current_deck}")
+    result = st.selectbox("🎯 Résultat", RESULTS, index=RESULTS.index(result_default), key=f"result_{current_deck}")
+
+    col1, col2 = st.columns(2)
+
+    # --- Bouton valider ---
+    with col1:
+        if st.button(f"✅ Valider {current_deck}", key=f"valider_{current_deck}"):
+            # Sauvegarder la correction dans la session
+            st.session_state.corrections[current_deck] = {
+                "tech": tech,
+                "domain": domain,
+                "country": country,
+                "result": result
+            }
+
+            # Sauvegarde immédiate dans labeled.csv
+            new_row = pd.DataFrame([{
+                "doc": current_deck,
+                "tech": tech,
+                "domain": domain,
+                "country": country,
+                "result": result
+            }])
+            labeled_df = pd.concat([labeled_df, new_row], ignore_index=True)
+            labeled_df.to_csv(LABELED_CSV, sep=";", index=False)
+            st.success(f"✅ {current_deck} ajouté à labeled.csv")
+
+            # Retirer le deck de la liste restante et passer au suivant
+            st.session_state.remaining_decks.pop(0)
+            st.rerun()
+
+    # --- Bouton ignorer ce deck ---
+    with col2:
+        if st.button(f"⏭ Ignorer {current_deck}", key=f"ignorer_{current_deck}"):
+            st.warning(f"⚠️ {current_deck} ignoré pour le moment")
+            st.session_state.remaining_decks.pop(0)
+            st.rerun()

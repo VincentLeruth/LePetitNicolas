@@ -3,7 +3,7 @@ import pandas as pd
 
 # Importer ici tes modules d'entraînement existants
 
-from src.ml.resultat.model_resultat import train_resultat
+from ml.resultat.model_result import train_resultat
 from src.ml.country.model_country import train_country
 from src.ml.domain.model_domain import train_domain
 from src.ml.tech.model_tech import train_tech

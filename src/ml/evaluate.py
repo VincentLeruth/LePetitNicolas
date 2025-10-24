@@ -135,4 +135,4 @@ def evaluate(label_col):
 
 # --- Point d’entrée principal ---
 if __name__ == "__main__":
-    evaluate("resultat")
+    evaluate("result")
