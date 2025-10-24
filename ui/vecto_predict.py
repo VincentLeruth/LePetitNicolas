@@ -63,20 +63,17 @@ def run_vectorize_and_predict_ui():
         st.session_state.predictions_done = False
 
     # --- Étape 1 : Vectorisation ---
-    if not st.session_state.vectorization_done:
+    if not st.session_state.vectorization_done and st.session_state.get("saved_uploaded_files", False):
         if st.button("⚙️ Lancer la vectorisation TF-IDF"):
             with st.spinner("Vectorisation en cours..."):
-                try:
-                    vectorize_text()
-                    commit_file_to_github(VECT_PATH,
-                                  "data/processed/tfidf_vectors.csv",
-                                  "Mise à jour des vecteurs TF-IDF")
-                    
-                    st.session_state.vectorization_done = True
-                    st.success("✅ Vectorisation terminée avec succès ! Les vecteurs ont été sauvegardés.")
-                    st.rerun()  # 🔁 Recharge la page pour cacher le bouton
-                except Exception as e:
-                    st.error(f"❌ Erreur pendant la vectorisation : {e}")
+                vectorize_text()
+                commit_file_to_github(VECT_PATH,
+                                "data/processed/tfidf_vectors.csv",
+                                "Mise à jour des vecteurs TF-IDF")
+                
+                st.session_state.vectorization_done = True
+                st.success("✅ Vectorisation terminée avec succès ! Les vecteurs ont été sauvegardés.")
+                st.rerun()  # 🔁 Recharge la page pour cacher le bouton
             st.stop()
 
     # --- Étape 2 : Prédictions ---
