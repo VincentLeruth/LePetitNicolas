@@ -72,6 +72,7 @@ def save_uploaded_files(uploaded_files, decks_dir, translated_dir):
             with open(save_path, "wb") as f:
                 f.write(file.getbuffer())
             commit_file_to_github(save_path, f"data/decks/{final_name}", f"Ajout du deck {final_name}")
+            
             # --- Extraction et traduction du texte, puis sauvegarde en TXT ---
             txt_path = os.path.join(translated_dir, os.path.splitext(final_name)[0] + ".txt")
             uploaded_text = translate_text(extract_text_from_pdf(file))

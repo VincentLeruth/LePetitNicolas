@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 
 # Import des modules existants pour vectorisation et prédictions
 from src.vectorisation.vectorize_text import vectorize_text
@@ -6,6 +7,8 @@ from src.ml.domain.predict_domain import predict_domain
 from src.ml.country.predict_country import predict_country
 from src.ml.tech.predict_tech import predict_tech
 from src.ml.resultat.predict_resultat import predict_resultat
+
+from commite_github import commit_file_to_github
 
 """
 Module Streamlit pour la vectorisation TF-IDF et les prédictions automatiques.
@@ -18,6 +21,8 @@ Fonctionnalités :
 - Gestion de l'état via `st.session_state` pour éviter les doublons et suivre la progression.
 """
 
+BASE_DIR = os.path.dirname(__file__)
+VECT_PATH = os.path.join(BASE_DIR, "..", "data", "processed", "tfidf_vectors.csv")
 
 def run_vectorize_and_predict_ui():
     """
@@ -63,6 +68,9 @@ def run_vectorize_and_predict_ui():
             with st.spinner("Vectorisation en cours..."):
                 try:
                     vectorize_text()
+                    commit_file_to_github(VECT_PATH,
+                                  "data/processed/tfidf_vectors.csv",
+                                  "Mise à jour des vecteurs TF-IDF")
                     st.session_state.vectorization_done = True
                     st.success("✅ Vectorisation terminée avec succès ! Les vecteurs ont été sauvegardés.")
                     st.rerun()  # 🔁 Recharge la page pour cacher le bouton
@@ -80,6 +88,16 @@ def run_vectorize_and_predict_ui():
                     predict_country()
                     predict_tech()
                     predict_resultat()
+
+                    # --- Commit automatique des CSV de prédiction ---
+                    PRED_DIR = os.path.join(BASE_DIR, "..", "data", "output", "predictions")
+                    for fname in os.listdir(PRED_DIR):
+                        fpath = os.path.join(PRED_DIR, fname)
+                        if os.path.isfile(fpath):
+                            commit_file_to_github(fpath,
+                                                f"data/output/predictions/{fname}",
+                                                f"Mise à jour des prédictions : {fname}")
+
                     st.session_state.predictions_done = True
                     st.success("🎯 Toutes les prédictions ont été effectuées avec succès !")
                     st.rerun()  # 🔁 Recharge pour masquer le bouton de prédiction
