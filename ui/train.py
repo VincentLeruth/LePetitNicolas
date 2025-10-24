@@ -82,24 +82,16 @@ def run_training_ui():
 
             # --- Entraînement de chaque modèle ---
             train_domain()
-            commit_file_to_github(os.path.join(MODELS_DIR, "domain_gb_model.joblib"),
-                                  "models/domain_gb_model.joblib",
-                                  "Mise à jour du modèle domain")
+            commit_file_to_github(os.path.join(BASE_DIR, "..", "models"))
 
             train_country()
-            commit_file_to_github(os.path.join(MODELS_DIR, "country_gb_model.joblib"),
-                                  "models/country_gb_model.joblib",
-                                  "Mise à jour du modèle country")
+            commit_file_to_github(os.path.join(BASE_DIR, "..", "models"))
 
             train_tech()
-            commit_file_to_github(os.path.join(MODELS_DIR, "tech_gb_model.joblib"),
-                                  "models/tech_gb_model.joblib",
-                                  "Mise à jour du modèle tech")
+            commit_file_to_github(os.path.join(BASE_DIR, "..", "models"))
 
             train_result()
-            commit_file_to_github(os.path.join(MODELS_DIR, "result_gb_model.joblib"),
-                                  "models/result_gb_model.joblib",
-                                  "Mise à jour du modèle result")
+            commit_file_to_github(os.path.join(BASE_DIR, "..", "models"))
 
             st.success("🎉 Tous les modèles ont été entraînés et sauvegardés !")
         return
