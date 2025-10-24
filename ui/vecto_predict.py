@@ -85,6 +85,9 @@ def run_vectorize_and_predict_ui():
         if st.button("🤖 Lancer les prédictions sur tous les modèles"):
             with st.spinner("Prédictions en cours..."):
                 try:
+                    PRED_DIR = os.path.join(BASE_DIR, "..", "data", "output", "predictions")
+                    os.makedirs(PRED_DIR, exist_ok=True)
+
                     predict_domain()
                     predict_country()
                     predict_tech()

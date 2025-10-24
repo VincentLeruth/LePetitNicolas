@@ -82,6 +82,7 @@ def save_uploaded_files(uploaded_files, decks_dir, translated_dir):
             
             commit_file_to_github(txt_path, f"data/processed/translated/{os.path.basename(txt_path)}",
                       f"Ajout du TXT traduit pour {final_name}")
+            st.success("🎉 Commit terminé !")
             
             # --- Ajout du nom du fichier sauvegardé à la liste ---
             saved_files_names.append(final_name)
