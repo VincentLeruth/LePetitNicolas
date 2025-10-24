@@ -1,6 +1,6 @@
 import fitz
 import re
-import io
+
 
 def normalize_text(text):
     text = text.lower()
