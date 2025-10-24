@@ -71,6 +71,7 @@ def run_vectorize_and_predict_ui():
                     commit_file_to_github(VECT_PATH,
                                   "data/processed/tfidf_vectors.csv",
                                   "Mise à jour des vecteurs TF-IDF")
+                    
                     st.session_state.vectorization_done = True
                     st.success("✅ Vectorisation terminée avec succès ! Les vecteurs ont été sauvegardés.")
                     st.rerun()  # 🔁 Recharge la page pour cacher le bouton

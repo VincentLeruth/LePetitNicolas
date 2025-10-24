@@ -16,9 +16,10 @@ Module Streamlit pour l'interface d'entraînement des modèles ML.
 Fonctionnalités :
 - Interface pour labelliser manuellement les fichiers PDF (decks) restants.
 - Sélection des labels pour chaque axe : technologie, domaine, pays et résultat.
-- Sauvegarde automatique des corrections dans labeled.csv.
+- Sauvegarde automatique des corrections dans labeled.csv et commit GitHub.
 - Gestion des decks restants dans st.session_state.
 - Bouton pour entraîner tous les modèles lorsque tous les decks sont labellisés.
+- Commit GitHub automatique pour tous les modèles après entraînement.
 - Interface Streamlit avec boutons valider/ignorer et mise à jour en temps réel.
 """
 
@@ -34,6 +35,20 @@ COUNTRIES = ["benelux", "france", "germany", "autres"]
 TECHS = ["soft", "hard", "both"]
 RESULTS = ["Unfavorable", "Very Unfavorable", "Interessant", "Out"]
 
+# --- Liste des fichiers modèles à envoyer sur GitHub ---
+MODEL_FILES = [
+    "country_gb_model.joblib",
+    "country_label_encoder.joblib",
+    "deck_classifier_rf.joblib",
+    "domain_centroids.joblib",
+    "domain_clf.joblib",
+    "domain_label_encoder.joblib",
+    "domain_nonzero_columns.joblib",
+    "domain_scaler.joblib",
+    "domain_selector.joblib",
+    "domain_svd.joblib",
+    "lr_multilabel_techno_model.joblib"
+]
 
 def run_training_ui():
     """
@@ -50,16 +65,18 @@ def run_training_ui():
        a. Affiche le deck actuel.
        b. Initialise les valeurs par défaut à partir de st.session_state.corrections.
        c. Propose des listes déroulantes pour chaque axe (tech, domain, country, result).
-       d. Bouton "Valider" : sauvegarde la correction dans la session et dans labeled.csv.
-       e. Bouton "Ignorer" : passe le deck au suivant sans le sauvegarder.
+       d. Bouton "Valider" : sauvegarde la correction dans la session et dans labeled.csv, puis commit GitHub.
+       e. Bouton "Ignorer" : passe le deck au suivant sans sauvegarder.
 
     Effets
     -------
     - Met à jour labeled.csv avec les corrections validées.
+    - Commit GitHub de labeled.csv à chaque validation.
     - Met à jour st.session_state.remaining_decks et st.session_state.corrections.
     - Permet d'entraîner les modèles ML une fois tous les decks labellisés.
+    - Commit GitHub de tous les fichiers modèles après entraînement.
     """
-    
+
     st.subheader("🧠 Entraînement des modèles")
 
     # --- Charger labeled.csv ou créer DataFrame vide ---
@@ -75,6 +92,7 @@ def run_training_ui():
     if "remaining_decks" not in st.session_state:
         st.session_state.remaining_decks = [f for f in all_decks if f not in labeled_df["doc"].tolist()]
 
+    # --- Tous les decks labellisés : bouton d'entraînement ---
     if not st.session_state.remaining_decks:
         st.success("✅ Tous les decks ont été labellisés !")
         if st.button("🧠 Entraîner tous les modèles"):
@@ -82,26 +100,19 @@ def run_training_ui():
 
             # --- Entraînement de chaque modèle ---
             train_domain()
-            #commit_file_to_github(os.path.join(MODELS_DIR, "domain_gb_model.joblib"),
-            #                      "models/domain_gb_model.joblib",
-            #                      "Mise à jour du modèle domain")
-
             train_country()
-            #commit_file_to_github(os.path.join(MODELS_DIR, "country_gb_model.joblib"),
-             #                     "models/country_gb_model.joblib",
-             #                     "Mise à jour du modèle country")
-
             train_tech()
-            #commit_file_to_github(os.path.join(MODELS_DIR, "tech_gb_model.joblib"),
-             #                     "models/tech_gb_model.joblib",
-             #                     "Mise à jour du modèle tech")
-
             train_result()
-            #commit_file_to_github(os.path.join(MODELS_DIR, "result_gb_model.joblib"),
-              #                    "models/result_gb_model.joblib",
-              #                    "Mise à jour du modèle result")
 
-            st.success("🎉 Tous les modèles ont été entraînés et sauvegardés !")
+            # --- Commit automatique de tous les fichiers modèles ---
+            for fname in MODEL_FILES:
+                local_path = os.path.join(MODELS_DIR, fname)
+                if os.path.exists(local_path):
+                    commit_file_to_github(local_path,
+                                          f"models/{fname}",
+                                          f"Mise à jour du modèle {fname}")
+
+            st.success("🎉 Tous les modèles ont été entraînés et envoyés sur GitHub !")
         return
 
     # --- Deck actuel à corriger ---
@@ -118,7 +129,7 @@ def run_training_ui():
     country_default = default_vals.get("country", COUNTRIES[0])
     result_default = default_vals.get("result", RESULTS[0])
 
-    # --- Listes déroulantes pour sélection des labels avec key unique ---
+    # --- Listes déroulantes pour sélection des labels ---
     tech = st.selectbox("🧠 Technologie", TECHS, index=TECHS.index(tech_default), key=f"tech_{current_deck}")
     domain = st.selectbox("🌍 Domaine", DOMAINS, index=DOMAINS.index(domain_default), key=f"domain_{current_deck}")
     country = st.selectbox("🏳️ Pays", COUNTRIES, index=COUNTRIES.index(country_default), key=f"country_{current_deck}")
@@ -126,9 +137,9 @@ def run_training_ui():
 
     col1, col2 = st.columns(2)
 
-    # --- Bouton Valider : sauvegarde la correction ---
+    # --- Bouton Valider : sauvegarde la correction et commit GitHub ---
     with col1:
-        if st.button(f"✅ Valider {current_deck}", key=f"valider_{current_deck}"):
+        if st.button(f"Valider {current_deck}", key=f"valider_{current_deck}"):
             # Sauvegarder la correction dans la session
             st.session_state.corrections[current_deck] = {
                 "tech": tech,
@@ -147,15 +158,19 @@ def run_training_ui():
             }])
             labeled_df = pd.concat([labeled_df, new_row], ignore_index=True)
             labeled_df.to_csv(LABELED_CSV, sep=";", index=False)
-            st.success(f"✅ {current_deck} ajouté à labeled.csv")
+
+            # --- Commit labeled.csv sur GitHub ---
+            commit_file_to_github(LABELED_CSV, "data/labeled.csv", f"Ajout du deck {current_deck}")
+
+            st.success(f"{current_deck} ajouté à labeled.csv et envoyé sur GitHub")
 
             # Retirer le deck de la liste restante et passer au suivant
             st.session_state.remaining_decks.pop(0)
             st.rerun()
 
-    # --- Bouton Ignorer : passe le deck au suivant sans sauvegarder ---
+    # --- Bouton Ignorer : passe le deck au suivant ---
     with col2:
         if st.button(f"⏭ Ignorer {current_deck}", key=f"ignorer_{current_deck}"):
-            st.warning(f"⚠️ {current_deck} ignoré pour le moment")
+            st.warning(f"{current_deck} ignoré pour le moment")
             st.session_state.remaining_decks.pop(0)
             st.rerun()
