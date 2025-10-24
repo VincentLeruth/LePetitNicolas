@@ -1,26 +1,57 @@
 import streamlit as st
 
-# Import de tes modules existants
+# Import des modules existants pour vectorisation et prédictions
 from src.vectorisation.vectorize_text import vectorize_text
 from src.ml.domain.predict_domain import predict_domain
 from src.ml.country.predict_country import predict_country
 from src.ml.tech.predict_tech import predict_tech
 from src.ml.resultat.predict_resultat import predict_resultat
 
+"""
+Module Streamlit pour la vectorisation TF-IDF et les prédictions automatiques.
+
+Fonctionnalités :
+- Vérifie que les fichiers uploadés ont été sauvegardés avant de lancer la vectorisation.
+- Lance la vectorisation TF-IDF sur les fichiers PDF sauvegardés.
+- Effectue les prédictions pour tous les modèles (domain, country, tech, result) après vectorisation.
+- Les boutons disparaissent une fois chaque étape terminée.
+- Gestion de l'état via `st.session_state` pour éviter les doublons et suivre la progression.
+"""
+
 
 def run_vectorize_and_predict_ui():
     """
     Interface Streamlit pour enchaîner la vectorisation TF-IDF et les prédictions.
-    Les boutons disparaissent après exécution.
+
+    Étapes principales :
+    1. Vérifie que les fichiers uploadés ont été sauvegardés.
+    2. Initialise les flags `vectorization_done` et `predictions_done` dans st.session_state.
+    3. Étape 1 : Vectorisation
+       a. Affiche un bouton pour lancer la vectorisation TF-IDF.
+       b. Met à jour `st.session_state.vectorization_done` après succès.
+       c. Recharge la page pour masquer le bouton après exécution.
+    4. Étape 2 : Prédictions
+       a. Affiche un bouton pour lancer les prédictions sur tous les modèles.
+       b. Met à jour `st.session_state.predictions_done` après succès.
+       c. Recharge la page pour masquer le bouton après exécution.
+    5. Étape finale : si vectorisation et prédictions déjà effectuées, affiche un message de confirmation.
+
+    Effets
+    -------
+    - Exécute `vectorize_text()` pour générer les vecteurs TF-IDF.
+    - Exécute `predict_domain()`, `predict_country()`, `predict_tech()`, `predict_resultat()`.
+    - Met à jour `st.session_state` pour suivre l'avancement.
+    - Affiche des messages Streamlit d'information, de succès ou d'erreur.
     """
+    
     st.subheader("🧮 Vectorisation + Prédictions automatiques")
 
-    # Vérifier que les fichiers sont sauvegardés avant de lancer
+    # --- Vérifier que les fichiers sont sauvegardés avant de lancer ---
     if not st.session_state.get("saved_uploaded_files", False):
         st.info("➡️ Veuillez d'abord sauvegarder les fichiers uploadés avant de lancer la vectorisation et les prédictions.")
         return
 
-    # Initialisation des flags si nécessaire
+    # --- Initialisation des flags si nécessaire ---
     if "vectorization_done" not in st.session_state:
         st.session_state.vectorization_done = False
     if "predictions_done" not in st.session_state:

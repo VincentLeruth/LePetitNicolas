@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module ui.upload</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="ui.html" class="white">ui</a>.upload</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cnicol%5Cdesktop%5Cstreamlit%5Cui%5Cupload.py">c:\users\nicol\desktop\streamlit\ui\upload.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="streamlit.html">streamlit</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-upload_decks"><strong>upload_decks</strong></a>()</dt><dd><span class="code">Interface&nbsp;Streamlit&nbsp;pour&nbsp;uploader&nbsp;des&nbsp;fichiers&nbsp;PDF&nbsp;à&nbsp;analyser.<br>
+&nbsp;<br>
+Étapes&nbsp;principales&nbsp;:<br>
+1.&nbsp;Initialise&nbsp;`st.session_state.uploaded_files`&nbsp;si&nbsp;non&nbsp;existant.<br>
+2.&nbsp;Affiche&nbsp;un&nbsp;file&nbsp;uploader&nbsp;seulement&nbsp;si&nbsp;aucun&nbsp;fichier&nbsp;n'est&nbsp;encore&nbsp;uploadé.<br>
+3.&nbsp;Filtrage&nbsp;des&nbsp;fichiers&nbsp;uploadés&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;a.&nbsp;Valides&nbsp;:&nbsp;noms&nbsp;en&nbsp;minuscules&nbsp;et&nbsp;extension&nbsp;.pdf.<br>
+&nbsp;&nbsp;&nbsp;b.&nbsp;Invalides&nbsp;:&nbsp;autres&nbsp;fichiers.<br>
+4.&nbsp;Met&nbsp;à&nbsp;jour&nbsp;`st.session_state.uploaded_files`&nbsp;avec&nbsp;les&nbsp;fichiers&nbsp;valides.<br>
+5.&nbsp;Affiche&nbsp;les&nbsp;fichiers&nbsp;uploadés&nbsp;avec&nbsp;option&nbsp;de&nbsp;suppression&nbsp;si&nbsp;les&nbsp;fichiers<br>
+&nbsp;&nbsp;&nbsp;n'ont&nbsp;pas&nbsp;encore&nbsp;été&nbsp;sauvegardés.<br>
+6.&nbsp;Supprime&nbsp;les&nbsp;fichiers&nbsp;de&nbsp;la&nbsp;session&nbsp;et&nbsp;toutes&nbsp;leurs&nbsp;clés&nbsp;associées&nbsp;si&nbsp;l'utilisateur&nbsp;choisit&nbsp;"Supprimer".<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Liste&nbsp;des&nbsp;fichiers&nbsp;PDF&nbsp;valides&nbsp;uploadés&nbsp;pour&nbsp;cette&nbsp;session.</span></dd></dl>
+</td></tr></table>
+</body></html>

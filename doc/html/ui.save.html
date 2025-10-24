@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module ui.save</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="ui.html" class="white">ui</a>.save</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cnicol%5Cdesktop%5Cstreamlit%5Cui%5Csave.py">c:\users\nicol\desktop\streamlit\ui\save.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="os.html">os</a><br>
+</td><td class="multicolumn"><a href="streamlit.html">streamlit</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-save_uploaded_files"><strong>save_uploaded_files</strong></a>(uploaded_files, decks_dir, translated_dir)</dt><dd><span class="code">Sauvegarde&nbsp;tous&nbsp;les&nbsp;fichiers&nbsp;uploadés&nbsp;et&nbsp;génère&nbsp;leurs&nbsp;fichiers&nbsp;TXT&nbsp;traduits.<br>
+&nbsp;<br>
+Étapes&nbsp;principales&nbsp;:<br>
+1.&nbsp;Vérifie&nbsp;que&nbsp;des&nbsp;fichiers&nbsp;ont&nbsp;été&nbsp;uploadés,&nbsp;sinon&nbsp;affiche&nbsp;un&nbsp;avertissement.<br>
+2.&nbsp;Vérifie&nbsp;si&nbsp;les&nbsp;fichiers&nbsp;ont&nbsp;déjà&nbsp;été&nbsp;sauvegardés&nbsp;dans&nbsp;`st.session_state`.<br>
+&nbsp;&nbsp;&nbsp;a.&nbsp;Si&nbsp;oui,&nbsp;informe&nbsp;l'utilisateur&nbsp;et&nbsp;ne&nbsp;fait&nbsp;rien.<br>
+3.&nbsp;Si&nbsp;le&nbsp;bouton&nbsp;Streamlit&nbsp;de&nbsp;sauvegarde&nbsp;est&nbsp;cliqué&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;a.&nbsp;Pour&nbsp;chaque&nbsp;fichier&nbsp;uploadé&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.&nbsp;Détermine&nbsp;le&nbsp;nom&nbsp;final&nbsp;(possiblement&nbsp;renommé&nbsp;par&nbsp;l'utilisateur).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.&nbsp;Sauvegarde&nbsp;le&nbsp;fichier&nbsp;PDF&nbsp;dans&nbsp;`decks_dir`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii.&nbsp;Extrait&nbsp;le&nbsp;texte&nbsp;du&nbsp;PDF&nbsp;et&nbsp;le&nbsp;traduit.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.&nbsp;Sauvegarde&nbsp;le&nbsp;texte&nbsp;traduit&nbsp;dans&nbsp;`translated_dir`&nbsp;en&nbsp;fichier&nbsp;TXT.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.&nbsp;Ajoute&nbsp;le&nbsp;nom&nbsp;du&nbsp;fichier&nbsp;sauvegardé&nbsp;à&nbsp;la&nbsp;liste.<br>
+4.&nbsp;Met&nbsp;à&nbsp;jour&nbsp;`st.session_state`&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;-&nbsp;`saved_uploaded_files`&nbsp;=&nbsp;True<br>
+&nbsp;&nbsp;&nbsp;-&nbsp;`uploaded_files_saved_names`&nbsp;=&nbsp;liste&nbsp;des&nbsp;fichiers&nbsp;sauvegardés<br>
+5.&nbsp;Affiche&nbsp;un&nbsp;message&nbsp;de&nbsp;succès&nbsp;et&nbsp;relance&nbsp;l'interface&nbsp;Streamlit.<br>
+&nbsp;<br>
+Paramètres<br>
+----------<br>
+uploaded_files&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Liste&nbsp;des&nbsp;fichiers&nbsp;PDF&nbsp;uploadés&nbsp;via&nbsp;Streamlit.<br>
+decks_dir&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Chemin&nbsp;du&nbsp;répertoire&nbsp;où&nbsp;sauvegarder&nbsp;les&nbsp;fichiers&nbsp;PDF.<br>
+translated_dir&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Chemin&nbsp;du&nbsp;répertoire&nbsp;où&nbsp;sauvegarder&nbsp;les&nbsp;fichiers&nbsp;TXT&nbsp;traduits.<br>
+&nbsp;<br>
+Effets<br>
+-------<br>
+-&nbsp;Sauvegarde&nbsp;les&nbsp;fichiers&nbsp;PDF&nbsp;et&nbsp;TXT&nbsp;traduits.<br>
+-&nbsp;Met&nbsp;à&nbsp;jour&nbsp;`st.session_state`&nbsp;avec&nbsp;les&nbsp;fichiers&nbsp;sauvegardés.<br>
+-&nbsp;Affiche&nbsp;des&nbsp;messages&nbsp;Streamlit&nbsp;d'information,&nbsp;warning&nbsp;ou&nbsp;succès.</span></dd></dl>
+</td></tr></table>
+</body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module ui.vecto_predict</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="ui.html" class="white">ui</a>.vecto_predict</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cnicol%5Cdesktop%5Cstreamlit%5Cui%5Cvecto_predict.py">c:\users\nicol\desktop\streamlit\ui\vecto_predict.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="streamlit.html">streamlit</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-run_vectorize_and_predict_ui"><strong>run_vectorize_and_predict_ui</strong></a>()</dt><dd><span class="code">Interface&nbsp;Streamlit&nbsp;pour&nbsp;enchaîner&nbsp;la&nbsp;vectorisation&nbsp;TF-IDF&nbsp;et&nbsp;les&nbsp;prédictions.<br>
+&nbsp;<br>
+Étapes&nbsp;principales&nbsp;:<br>
+1.&nbsp;Vérifie&nbsp;que&nbsp;les&nbsp;fichiers&nbsp;uploadés&nbsp;ont&nbsp;été&nbsp;sauvegardés.<br>
+2.&nbsp;Initialise&nbsp;les&nbsp;flags&nbsp;`vectorization_done`&nbsp;et&nbsp;`predictions_done`&nbsp;dans&nbsp;st.session_state.<br>
+3.&nbsp;Étape&nbsp;1&nbsp;:&nbsp;Vectorisation<br>
+&nbsp;&nbsp;&nbsp;a.&nbsp;Affiche&nbsp;un&nbsp;bouton&nbsp;pour&nbsp;lancer&nbsp;la&nbsp;vectorisation&nbsp;TF-IDF.<br>
+&nbsp;&nbsp;&nbsp;b.&nbsp;Met&nbsp;à&nbsp;jour&nbsp;`st.session_state.vectorization_done`&nbsp;après&nbsp;succès.<br>
+&nbsp;&nbsp;&nbsp;c.&nbsp;Recharge&nbsp;la&nbsp;page&nbsp;pour&nbsp;masquer&nbsp;le&nbsp;bouton&nbsp;après&nbsp;exécution.<br>
+4.&nbsp;Étape&nbsp;2&nbsp;:&nbsp;Prédictions<br>
+&nbsp;&nbsp;&nbsp;a.&nbsp;Affiche&nbsp;un&nbsp;bouton&nbsp;pour&nbsp;lancer&nbsp;les&nbsp;prédictions&nbsp;sur&nbsp;tous&nbsp;les&nbsp;modèles.<br>
+&nbsp;&nbsp;&nbsp;b.&nbsp;Met&nbsp;à&nbsp;jour&nbsp;`st.session_state.predictions_done`&nbsp;après&nbsp;succès.<br>
+&nbsp;&nbsp;&nbsp;c.&nbsp;Recharge&nbsp;la&nbsp;page&nbsp;pour&nbsp;masquer&nbsp;le&nbsp;bouton&nbsp;après&nbsp;exécution.<br>
+5.&nbsp;Étape&nbsp;finale&nbsp;:&nbsp;si&nbsp;vectorisation&nbsp;et&nbsp;prédictions&nbsp;déjà&nbsp;effectuées,&nbsp;affiche&nbsp;un&nbsp;message&nbsp;de&nbsp;confirmation.<br>
+&nbsp;<br>
+Effets<br>
+-------<br>
+-&nbsp;Exécute&nbsp;`vectorize_text()`&nbsp;pour&nbsp;générer&nbsp;les&nbsp;vecteurs&nbsp;TF-IDF.<br>
+-&nbsp;Exécute&nbsp;`predict_domain()`,&nbsp;`predict_country()`,&nbsp;`predict_tech()`,&nbsp;`predict_resultat()`.<br>
+-&nbsp;Met&nbsp;à&nbsp;jour&nbsp;`st.session_state`&nbsp;pour&nbsp;suivre&nbsp;l'avancement.<br>
+-&nbsp;Affiche&nbsp;des&nbsp;messages&nbsp;Streamlit&nbsp;d'information,&nbsp;de&nbsp;succès&nbsp;ou&nbsp;d'erreur.</span></dd></dl>
+</td></tr></table>
+</body></html>

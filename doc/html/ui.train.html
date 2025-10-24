@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module ui.train</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="ui.html" class="white">ui</a>.train</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cnicol%5Cdesktop%5Cstreamlit%5Cui%5Ctrain.py">c:\users\nicol\desktop\streamlit\ui\train.py</a></td></tr></table>
+    <p><span class="code">#&nbsp;ui/train_ui.py</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="os.html">os</a><br>
+</td><td class="multicolumn"><a href="pandas.html">pandas</a><br>
+</td><td class="multicolumn"><a href="streamlit.html">streamlit</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-run_training_ui"><strong>run_training_ui</strong></a>()</dt><dd><span class="code">Interface&nbsp;Streamlit&nbsp;pour&nbsp;la&nbsp;labellisation&nbsp;des&nbsp;decks&nbsp;et&nbsp;l'entraînement&nbsp;des&nbsp;modèles.<br>
+&nbsp;<br>
+Étapes&nbsp;principales&nbsp;:<br>
+1.&nbsp;Charge&nbsp;le&nbsp;fichier&nbsp;labeled.csv&nbsp;s'il&nbsp;existe,&nbsp;sinon&nbsp;crée&nbsp;un&nbsp;DataFrame&nbsp;vide.<br>
+2.&nbsp;Liste&nbsp;tous&nbsp;les&nbsp;fichiers&nbsp;PDF&nbsp;dans&nbsp;le&nbsp;répertoire&nbsp;des&nbsp;decks.<br>
+3.&nbsp;Met&nbsp;à&nbsp;jour&nbsp;st.session_state.remaining_decks&nbsp;avec&nbsp;les&nbsp;fichiers&nbsp;non&nbsp;encore&nbsp;labellisés.<br>
+4.&nbsp;Si&nbsp;tous&nbsp;les&nbsp;decks&nbsp;sont&nbsp;labellisés&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;a.&nbsp;Affiche&nbsp;un&nbsp;message&nbsp;de&nbsp;succès.<br>
+&nbsp;&nbsp;&nbsp;b.&nbsp;Propose&nbsp;un&nbsp;bouton&nbsp;pour&nbsp;entraîner&nbsp;tous&nbsp;les&nbsp;modèles.<br>
+5.&nbsp;Si&nbsp;des&nbsp;decks&nbsp;restent&nbsp;à&nbsp;labelliser&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;a.&nbsp;Affiche&nbsp;le&nbsp;deck&nbsp;actuel.<br>
+&nbsp;&nbsp;&nbsp;b.&nbsp;Initialise&nbsp;les&nbsp;valeurs&nbsp;par&nbsp;défaut&nbsp;à&nbsp;partir&nbsp;de&nbsp;st.session_state.corrections.<br>
+&nbsp;&nbsp;&nbsp;c.&nbsp;Propose&nbsp;des&nbsp;listes&nbsp;déroulantes&nbsp;pour&nbsp;chaque&nbsp;axe&nbsp;(tech,&nbsp;domain,&nbsp;country,&nbsp;result).<br>
+&nbsp;&nbsp;&nbsp;d.&nbsp;Bouton&nbsp;"Valider"&nbsp;:&nbsp;sauvegarde&nbsp;la&nbsp;correction&nbsp;dans&nbsp;la&nbsp;session&nbsp;et&nbsp;dans&nbsp;labeled.csv.<br>
+&nbsp;&nbsp;&nbsp;e.&nbsp;Bouton&nbsp;"Ignorer"&nbsp;:&nbsp;passe&nbsp;le&nbsp;deck&nbsp;au&nbsp;suivant&nbsp;sans&nbsp;le&nbsp;sauvegarder.<br>
+&nbsp;<br>
+Effets<br>
+-------<br>
+-&nbsp;Met&nbsp;à&nbsp;jour&nbsp;labeled.csv&nbsp;avec&nbsp;les&nbsp;corrections&nbsp;validées.<br>
+-&nbsp;Met&nbsp;à&nbsp;jour&nbsp;st.session_state.remaining_decks&nbsp;et&nbsp;st.session_state.corrections.<br>
+-&nbsp;Permet&nbsp;d'entraîner&nbsp;les&nbsp;modèles&nbsp;ML&nbsp;une&nbsp;fois&nbsp;tous&nbsp;les&nbsp;decks&nbsp;labellisés.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>BASE_DIR</strong> = r'C:\Users\nicol\Desktop\streamlit\ui'<br>
+<strong>COUNTRIES</strong> = ['benelux', 'france', 'germany', 'autres']<br>
+<strong>DECKS_DIR</strong> = r'C:\Users\nicol\Desktop\streamlit\ui\..\data\decks'<br>
+<strong>DOMAINS</strong> = ['energy transition', 'industrie 4.0', 'new materials', 'others']<br>
+<strong>LABELED_CSV</strong> = r'C:\Users\nicol\Desktop\streamlit\ui\..\data\labeled.csv'<br>
+<strong>RESULTS</strong> = ['Unfavorable', 'Very Unfavorable', 'Interessant', 'Out']<br>
+<strong>TECHS</strong> = ['soft', 'hard', 'both']</td></tr></table>
+</body></html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module ui.display_results</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="ui.html" class="white">ui</a>.display_results</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cnicol%5Cdesktop%5Cstreamlit%5Cui%5Cdisplay_results.py">c:\users\nicol\desktop\streamlit\ui\display_results.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="os.html">os</a><br>
+</td><td class="multicolumn"><a href="pandas.html">pandas</a><br>
+</td><td class="multicolumn"><a href="streamlit.html">streamlit</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-display_prediction_results"><strong>display_prediction_results</strong></a>(uploaded_saved_names)</dt><dd><span class="code">Affiche&nbsp;les&nbsp;résultats&nbsp;des&nbsp;prédictions&nbsp;par&nbsp;fichier&nbsp;réellement&nbsp;sauvegardé.<br>
+&nbsp;<br>
+Étapes&nbsp;principales&nbsp;:<br>
+1.&nbsp;Définit&nbsp;le&nbsp;répertoire&nbsp;des&nbsp;fichiers&nbsp;de&nbsp;prédictions.<br>
+2.&nbsp;Charge&nbsp;les&nbsp;fichiers&nbsp;CSV&nbsp;de&nbsp;prédictions&nbsp;pour&nbsp;domaine,&nbsp;pays,&nbsp;technologie&nbsp;et&nbsp;résultat.<br>
+3.&nbsp;Fusionne&nbsp;les&nbsp;résultats&nbsp;par&nbsp;document&nbsp;(fichier)&nbsp;pour&nbsp;obtenir&nbsp;un&nbsp;tableau&nbsp;complet.<br>
+4.&nbsp;Renomme&nbsp;les&nbsp;colonnes&nbsp;pour&nbsp;affichage&nbsp;lisible.<br>
+5.&nbsp;Filtre&nbsp;uniquement&nbsp;les&nbsp;fichiers&nbsp;réellement&nbsp;sauvegardés.<br>
+6.&nbsp;Pour&nbsp;chaque&nbsp;fichier&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;a.&nbsp;Vérifie&nbsp;si&nbsp;le&nbsp;pays&nbsp;ou&nbsp;le&nbsp;domaine&nbsp;est&nbsp;hors&nbsp;des&nbsp;critères&nbsp;autorisés.<br>
+&nbsp;&nbsp;&nbsp;b.&nbsp;Crée&nbsp;un&nbsp;marqueur&nbsp;visuel&nbsp;pour&nbsp;OUT&nbsp;(❌).<br>
+&nbsp;&nbsp;&nbsp;c.&nbsp;Affiche&nbsp;les&nbsp;informations&nbsp;dans&nbsp;un&nbsp;expander&nbsp;Streamlit&nbsp;avec&nbsp;style&nbsp;visuel&nbsp;conditionnel.<br>
+&nbsp;<br>
+Paramètres<br>
+----------<br>
+uploaded_saved_names&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Liste&nbsp;des&nbsp;noms&nbsp;de&nbsp;fichiers&nbsp;réellement&nbsp;sauvegardés&nbsp;à&nbsp;afficher.<br>
+&nbsp;<br>
+Effets<br>
+-------<br>
+-&nbsp;Affiche&nbsp;dans&nbsp;l'interface&nbsp;Streamlit&nbsp;les&nbsp;cartes&nbsp;repliables&nbsp;pour&nbsp;chaque&nbsp;fichier.<br>
+-&nbsp;Indique&nbsp;visuellement&nbsp;si&nbsp;un&nbsp;fichier&nbsp;est&nbsp;hors&nbsp;des&nbsp;critères&nbsp;autorisés.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>ALLOWED_COUNTRIES</strong> = ['benelux', 'france', 'germany']<br>
+<strong>ALLOWED_DOMAINS</strong> = ['energy transition', 'industry 4.0', 'new materials']<br>
+<strong>BASE_DIR</strong> = r'C:\Users\nicol\Desktop\streamlit\ui'</td></tr></table>
+</body></html>

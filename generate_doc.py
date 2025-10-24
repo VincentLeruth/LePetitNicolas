@@ -22,7 +22,7 @@ modules = [
     "src.ml.domain.model_domain",
     "src.ml.domain.predict_domain",
 
-    "src.ml.resultat.model_resultat",
+    "src.ml.resultat.model_result",
     "src.ml.resultat.predict_resultat",
 
     "src.ml.tech.model_tech",
@@ -38,6 +38,14 @@ modules = [
     "src.treatment.detect_lang",
     "src.treatment.extract_text",
     "src.treatment.translate",
+
+    # UI components
+    "ui.upload",
+    "ui.compare",
+    "ui.save",
+    "ui.train",
+    "ui.vecto_predict",
+    "ui.display_results"
 ]
 
 # Génération des docs HTML

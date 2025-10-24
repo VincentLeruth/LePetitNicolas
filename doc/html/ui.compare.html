@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module ui.compare</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="ui.html" class="white">ui</a>.compare</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cnicol%5Cdesktop%5Cstreamlit%5Cui%5Ccompare.py">c:\users\nicol\desktop\streamlit\ui\compare.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="os.html">os</a><br>
+</td><td class="multicolumn"><a href="streamlit.html">streamlit</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-compare_uploaded_files"><strong>compare_uploaded_files</strong></a>(uploaded_files, translated_dir, decks_dir)</dt><dd><span class="code">Compare&nbsp;les&nbsp;fichiers&nbsp;PDF&nbsp;uploadés&nbsp;avec&nbsp;les&nbsp;fichiers&nbsp;TXT&nbsp;traduits&nbsp;existants&nbsp;et&nbsp;affiche&nbsp;la&nbsp;similarité.<br>
+&nbsp;<br>
+Étapes&nbsp;principales&nbsp;:<br>
+1.&nbsp;Vérifie&nbsp;que&nbsp;des&nbsp;fichiers&nbsp;ont&nbsp;été&nbsp;uploadés,&nbsp;sinon&nbsp;affiche&nbsp;un&nbsp;message&nbsp;d'information.<br>
+2.&nbsp;Pour&nbsp;chaque&nbsp;fichier&nbsp;PDF&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;a.&nbsp;Vérifie&nbsp;si&nbsp;le&nbsp;fichier&nbsp;TXT&nbsp;traduit&nbsp;correspondant&nbsp;existe.<br>
+&nbsp;&nbsp;&nbsp;b.&nbsp;Extrait&nbsp;et&nbsp;traduit&nbsp;le&nbsp;texte&nbsp;du&nbsp;PDF&nbsp;uploadé.<br>
+&nbsp;&nbsp;&nbsp;c.&nbsp;Lit&nbsp;le&nbsp;texte&nbsp;existant&nbsp;depuis&nbsp;le&nbsp;fichier&nbsp;TXT.<br>
+&nbsp;&nbsp;&nbsp;d.&nbsp;Calcule&nbsp;la&nbsp;similarité&nbsp;entre&nbsp;le&nbsp;texte&nbsp;uploadé&nbsp;et&nbsp;le&nbsp;texte&nbsp;existant.<br>
+&nbsp;&nbsp;&nbsp;e.&nbsp;Affiche&nbsp;les&nbsp;textes&nbsp;dans&nbsp;deux&nbsp;colonnes&nbsp;via&nbsp;un&nbsp;expander&nbsp;Streamlit,&nbsp;avec&nbsp;la&nbsp;similarité&nbsp;en&nbsp;titre.<br>
+&nbsp;&nbsp;&nbsp;f.&nbsp;Vérifie&nbsp;si&nbsp;un&nbsp;fichier&nbsp;du&nbsp;même&nbsp;nom&nbsp;existe&nbsp;déjà&nbsp;dans&nbsp;le&nbsp;répertoire&nbsp;des&nbsp;decks&nbsp;et&nbsp;propose&nbsp;un&nbsp;renommage&nbsp;automatique.<br>
+3.&nbsp;Met&nbsp;à&nbsp;jour&nbsp;`st.session_state.comparison_done`&nbsp;à&nbsp;True&nbsp;une&nbsp;fois&nbsp;la&nbsp;comparaison&nbsp;terminée.<br>
+&nbsp;<br>
+Paramètres<br>
+----------<br>
+uploaded_files&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Liste&nbsp;des&nbsp;fichiers&nbsp;PDF&nbsp;uploadés&nbsp;via&nbsp;Streamlit.<br>
+translated_dir&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Chemin&nbsp;du&nbsp;répertoire&nbsp;contenant&nbsp;les&nbsp;fichiers&nbsp;TXT&nbsp;traduits.<br>
+decks_dir&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Chemin&nbsp;du&nbsp;répertoire&nbsp;des&nbsp;decks&nbsp;existants.<br>
+&nbsp;<br>
+Effets<br>
+-------<br>
+-&nbsp;Affiche&nbsp;les&nbsp;résultats&nbsp;dans&nbsp;l'interface&nbsp;Streamlit.<br>
+-&nbsp;Met&nbsp;à&nbsp;jour&nbsp;`st.session_state.comparison_done`.<br>
+-&nbsp;Génère&nbsp;des&nbsp;suggestions&nbsp;de&nbsp;renommage&nbsp;si&nbsp;des&nbsp;fichiers&nbsp;existent&nbsp;déjà.</span></dd></dl>
+</td></tr></table>
+</body></html>
