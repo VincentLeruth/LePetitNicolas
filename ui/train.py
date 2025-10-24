@@ -8,6 +8,8 @@ from src.ml.country.model_country import train_country
 from src.ml.tech.model_tech import train_tech
 from src.ml.resultat.model_result import train_result
 
+from commite_github import commit_file_to_github
+
 """
 Module Streamlit pour l'interface d'entraînement des modèles ML.
 
@@ -24,6 +26,7 @@ Fonctionnalités :
 BASE_DIR = os.path.dirname(__file__)
 DECKS_DIR = os.path.join(BASE_DIR, "..", "data", "decks")
 LABELED_CSV = os.path.join(BASE_DIR, "..", "data", "labeled.csv")
+MODELS_DIR = os.path.join(BASE_DIR, "..", "models")
 
 # --- Choix possibles pour chaque axe ---
 DOMAINS = ["energy transition", "industrie 4.0", "new materials", "others"]
@@ -75,11 +78,29 @@ def run_training_ui():
     if not st.session_state.remaining_decks:
         st.success("✅ Tous les decks ont été labellisés !")
         if st.button("🧠 Entraîner tous les modèles"):
-            st.info("⏳ Entraînement en cours...\n\n Cela peut prendre quelques minutes.")
+            st.info("⏳ Entraînement en cours... Cela peut prendre quelques minutes.")
+
+            # --- Entraînement de chaque modèle ---
             train_domain()
+            commit_file_to_github(os.path.join(MODELS_DIR, "domain_gb_model.joblib"),
+                                  "models/domain_gb_model.joblib",
+                                  "Mise à jour du modèle domain")
+
             train_country()
+            commit_file_to_github(os.path.join(MODELS_DIR, "country_gb_model.joblib"),
+                                  "models/country_gb_model.joblib",
+                                  "Mise à jour du modèle country")
+
             train_tech()
+            commit_file_to_github(os.path.join(MODELS_DIR, "tech_gb_model.joblib"),
+                                  "models/tech_gb_model.joblib",
+                                  "Mise à jour du modèle tech")
+
             train_result()
+            commit_file_to_github(os.path.join(MODELS_DIR, "result_gb_model.joblib"),
+                                  "models/result_gb_model.joblib",
+                                  "Mise à jour du modèle result")
+
             st.success("🎉 Tous les modèles ont été entraînés et sauvegardés !")
         return
 
