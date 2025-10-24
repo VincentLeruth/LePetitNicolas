@@ -85,7 +85,7 @@ def run_vectorize_and_predict_ui():
         if st.button("🤖 Lancer les prédictions sur tous les modèles"):
             with st.spinner("Prédictions en cours..."):
                 try:
-                    PRED_DIR = os.path.join(BASE_DIR, "..", "data", "output", "predictions")
+                    PRED_DIR = os.path.join(BASE_DIR, "..", "output", "predictions")
                     os.makedirs(PRED_DIR, exist_ok=True)
 
                     predict_domain()
@@ -94,12 +94,11 @@ def run_vectorize_and_predict_ui():
                     predict_resultat()
 
                     # --- Commit automatique des CSV de prédiction ---
-                    PRED_DIR = os.path.join(BASE_DIR, "..", "data", "output", "predictions")
                     for fname in os.listdir(PRED_DIR):
                         fpath = os.path.join(PRED_DIR, fname)
                         if os.path.isfile(fpath):
                             commit_file_to_github(fpath,
-                                                f"data/output/predictions/{fname}",
+                                                f"output/predictions/{fname}",
                                                 f"Mise à jour des prédictions : {fname}")
 
                     st.session_state.predictions_done = True
