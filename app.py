@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+import base64
 
 from ui.upload import upload_decks
 from ui.compare import compare_uploaded_files
@@ -91,3 +92,53 @@ elif st.session_state.page == "analyze":
 
     if st.button("⬅️ Retour au menu principal"):
         go_to("menu")
+
+
+
+# --- Charger le logo ---
+logo_path = os.path.join(os.path.dirname(__file__), "Industrya_logo.jpg")
+with open(logo_path, "rb") as f:
+    logo_base64 = base64.b64encode(f.read()).decode("utf-8")
+
+st.markdown(
+    f"""
+    <style>
+    /* Footer fixe en bas à gauche */
+    .footer-container {{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 20px;
+        font-size: 14px;
+        color: #555;
+        border-top: 1px solid #ddd;
+        z-index: 999;
+    }}
+
+    .footer-left img {{
+        height: 60px;
+        margin-right: 10px;
+    }}
+
+    .footer-right {{
+        text-align: right;
+        font-style: italic;
+    }}
+    </style>
+
+    <div class="footer-container">
+        <div class="footer-left">
+            <img src="data:image/jpeg;base64,{logo_base64}" alt="Logo">
+        </div>
+        <div class="footer-right">
+            © 2025 Scoring App — Tous droits réservés à Industrya Fund - Dévelopé par Nicolas CB
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
