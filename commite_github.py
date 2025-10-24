@@ -7,8 +7,8 @@ GITHUB_TOKEN = st.secrets["GITHUB_TOKEN"]
 REPO_NAME = "https://github.com/Nic0o00/streamlit"
 BRANCH = "main"
 
-g = Github(GITHUB_TOKEN)
-repo = g.get_repo(REPO_NAME)
+g = Github(st.secrets["GITHUB_TOKEN"])
+repo = g.get_repo(f"{st.secrets['GITHUB_USER']}/{st.secrets['GITHUB_REPO']}")
 
 def commit_file_to_github(local_path, repo_path, commit_message):
     """
