@@ -1,327 +1,330 @@
 doc;predicted_domain;confidence_score
-247energy.pdf;energy transition;0.9833391198869439
-actronika.pdf;others;0.7268944183910357
-adlatusrobotics.pdf;industry 4.0;0.9659576704345793
-adlc.pdf;others;0.6061512328699991
-aerleum.pdf;energy transition;0.9579867505822743
-aiblox.pdf;industry 4.0;0.9847863060650605
-airbooster.pdf;energy transition;0.5741441837239757
-aircision.pdf;industry 4.0;0.9361714711290055
-airthium.pdf;industry 4.0;0.7619857859960647
-aithra.pdf;industry 4.0;0.980962596995613
-akryvia.pdf;new materials;0.6205959991432283
-akvola.pdf;energy transition;0.6488580301332929
-alberts.pdf;others;0.98860680347015
-aloecell.pdf;energy transition;0.5528936403641413
-alouette.pdf;industry 4.0;0.9825440172936512
-aloxy.pdf;industry 4.0;0.991937018747066
-altosolution.pdf;energy transition;0.9864473803921469
-altransenergy.pdf;industry 4.0;0.8703477176473516
-amethyste.pdf;industry 4.0;0.9741878262513274
-amflow.pdf;industry 4.0;0.9785584412325582
-amiraltechnologies.pdf;industry 4.0;0.9646108809764544
-anabrid.pdf;new materials;0.9959684763598667
-ananke.pdf;energy transition;0.9805079308432978
-angara.pdf;energy transition;0.8990156285185741
-anisoprint.pdf;industry 4.0;0.59247544888746
-appsilon.pdf;others;0.9477520047854748
-aprexsolutions.pdf;industry 4.0;0.9976738346694775
-aquilae.pdf;industry 4.0;0.8408451545513914
-aredox.pdf;energy transition;0.9534218142074905
-arkcapturesolutions.pdf;energy transition;0.9952160379931967
-arkeocean.pdf;others;0.9892379633638918
-askforthemoon.pdf;industry 4.0;0.9917005120624217
-askforthemoon2.pdf;industry 4.0;0.9756417324631524
-astriis.pdf;industry 4.0;0.9606291478007581
-atmocoat.pdf;new materials;0.9907860038203771
-avoxt.pdf;energy transition;0.9932146584159142
-awakemobility.pdf;industry 4.0;0.8966052187026223
-azteq.pdf;energy transition;0.9607185948176342
-azteq2.pdf;energy transition;0.9440644636009455
-batiprint3d.pdf;industry 4.0;0.951390955716559
-beagle.pdf;others;0.939432535090009
-bianergy2.pdf;others;0.974808001586476
-biocide.pdf;industry 4.0;0.9812344898646317
-blixt.pdf;energy transition;0.9806614052978161
-bloom.pdf;energy transition;0.97986496373687
-bluepowersynergy.pdf;energy transition;0.9876803234862793
-bondzai.pdf;industry 4.0;0.9832254935421652
-bonidriver.pdf;others;0.9822401653297111
-borealesenergy.pdf;energy transition;0.9822099159883236
-brighterbins.pdf;energy transition;0.836180641810011
-brolz.pdf;industry 4.0;0.8345595117407639
-bulane.pdf;energy transition;0.9684549129175
-carbodown.pdf;energy transition;0.942046100804797
-carbon8.pdf;energy transition;0.8316594240938123
-carbyon2.pdf;energy transition;0.9785639488781763
-chemalive.pdf;new materials;0.9843491049843965
-chemicalnewtech.pdf;energy transition;0.9450641585501977
-cilkoa.pdf;new materials;0.9905453157236782
-cixten.pdf;energy transition;0.9988092060288912
-clhynn.pdf;energy transition;0.9706174506516133
-cognifab.pdf;industry 4.0;0.9954960867142868
-coldpad.pdf;others;0.9958079623127004
-coldpad2.pdf;others;0.9579117776565764
-companionenergy.pdf;energy transition;0.9943839436007851
-comppair.pdf;new materials;0.9837713484599219
-comsens.pdf;industry 4.0;0.9946823813385651
-condugo.pdf;energy transition;0.9225406720260408
-cosmotech.pdf;industry 4.0;0.9540343497393784
-covess.pdf;industry 4.0;0.9270949385683905
-credoxys.pdf;new materials;0.990080243412481
-ctrlenergy.pdf;energy transition;0.9975077475889789
-cybus.pdf;industry 4.0;0.965630509496093
-dacma.pdf;energy transition;0.9455019029253012
-deephawk.pdf;industry 4.0;0.9937392112881198
-deloq.pdf;industry 4.0;0.9778242240482056
-diamfab.pdf;others;0.9847269297735584
-dimpora.pdf;new materials;0.9835778237532624
-dionymer.pdf;new materials;0.9777010375949106
-dotocean.pdf;others;0.9896548916326016
-dragonflypads2.pdf;others;0.9858826779233599
-dronematrix.pdf;industry 4.0;0.8948855221061612
-dropslab.pdf;industry 4.0;0.9782842741076786
-dryad.pdf;industry 4.0;0.8629279414154054
-ecellix.pdf;energy transition;0.8786044030048572
-echemicles.pdf;energy transition;0.987542834588824
-eco2grow.pdf;energy transition;0.9857213776734498
-ecobot.pdf;industry 4.0;0.9974550437205091
-ecop.pdf;energy transition;0.9364646201058945
-edgetech.pdf;industry 4.0;0.8928309151538654
-edock.pdf;others;0.9977517099630987
-effectsphotonics.pdf;industry 4.0;0.933942917883982
-effitrax.pdf;industry 4.0;0.953857753352902
-ehgroup.pdf;energy transition;0.9786174764587702
-electriq.pdf;energy transition;0.9834813691378863
-electrochaea.pdf;energy transition;0.9606738763945337
-elugie.pdf;energy transition;0.9999055096183391
-enadyne.pdf;energy transition;0.9418480140029604
-enhywhere2.pdf;energy transition;0.9933135610914398
-enosis.pdf;energy transition;0.9982499057090463
-enow.pdf;energy transition;0.8672769188530871
-enprove.pdf;energy transition;0.8761859129303062
-entent.pdf;energy transition;0.9816487181648839
-entras.pdf;energy transition;0.9905464489221084
-esnah.pdf;others;0.9753119072066068
-eternalpower.pdf;energy transition;0.999683666344852
-ethernics.pdf;energy transition;0.9564859471723022
-everysens.pdf;energy transition;0.9949458102568504
-exanodia.pdf;industry 4.0;0.755331165489021
-exomatter.pdf;industry 4.0;0.9966469562679546
-extracthive.pdf;new materials;0.9884055397835989
-farwind.pdf;energy transition;0.9996423394977436
-fibersail2.pdf;energy transition;0.9851066412379503
-flasc.pdf;energy transition;0.9785787289957365
-flasc2.pdf;energy transition;0.965341596768201
-flyability.pdf;industry 4.0;0.9910978628650609
-flyability2.pdf;industry 4.0;0.8675420561535091
-followinspiration.pdf;industry 4.0;0.9982287714263659
-forecastyai.pdf;industry 4.0;0.9933025947953082
-fountainfuel.pdf;energy transition;0.9819309718871281
-genesink.pdf;new materials;0.9854247871952789
-genhy.pdf;energy transition;0.9956373022394582
-geolith.pdf;others;0.9827109480007911
-getyourway.pdf;industry 4.0;0.9951828603651856
-getyourway_v1.pdf;industry 4.0;0.9951828603651856
-ghyga.pdf;energy transition;0.9634555482504522
-grandperspective.pdf;industry 4.0;0.9699934517888336
-gravithy.pdf;energy transition;0.9929510291659273
-greengentech.pdf;others;0.9859161287225335
-greenyenergyag.pdf;energy transition;0.9477142062575677
-grizit.pdf;industry 4.0;0.9872964709477715
-grownbio.pdf;others;0.9996566344940673
-h2sys.pdf;energy transition;0.9400220999019707
-hace.pdf;energy transition;0.9906354922082039
-hawaitech.pdf;industry 4.0;0.9711386273313538
-hbat.pdf;energy transition;0.9765370820461129
-heliac.pdf;energy transition;0.9782418675634693
-heliup2.pdf;energy transition;0.9789354318878052
-hevatech.pdf;energy transition;0.9962982431984856
-hexana.pdf;energy transition;0.992217765182306
-highline.pdf;new materials;0.9830779332761502
-hiqutediamond.pdf;new materials;0.9280592801040711
-hoeller.pdf;energy transition;0.9712112490821937
-holosolis.pdf;energy transition;0.9953182445359239
-holy.pdf;industry 4.0;0.8823658125735115
-huskk.pdf;industry 4.0;0.9440131994546778
-hysilabs.pdf;energy transition;0.9913687915564305
-hyve.pdf;energy transition;0.9859389418361899
-hywaves.pdf;energy transition;0.9826673553714785
-icodos.pdf;energy transition;0.9904831575795819
-imsystems.pdf;industry 4.0;0.9965341944395318
-independentlivingbase.pdf;others;0.9846751890020525
-ineratec.pdf;energy transition;0.9640774793034947
-infiniciag.pdf;new materials;0.4278013359205395
-inflights.pdf;industry 4.0;0.8694056149156812
-infrasolid.pdf;industry 4.0;0.984847464944466
-inphocal.pdf;industry 4.0;0.9505708502578588
-insens.pdf;industry 4.0;0.9370365573042282
-intelligentfluids.pdf;others;0.9778484408056574
-internest.pdf;others;0.989139292053697
-inuse.pdf;industry 4.0;0.9772524320034368
-ionics.pdf;new materials;0.7958483822030331
-ipsumtek.pdf;industry 4.0;0.985096489926938
-iqunet.pdf;industry 4.0;0.9963108494021518
-istya.pdf;industry 4.0;0.9092211461378027
-japet.pdf;industry 4.0;0.8554845963910463
-keeyaerogel.pdf;industry 4.0;0.6372207337325712
-keeyaerogel2.pdf;industry 4.0;0.5947118210790371
-keiron.pdf;energy transition;0.4767236821285758
-kemiwatt.pdf;energy transition;0.9823010926396677
-kheoos.pdf;industry 4.0;0.9126369316234808
-komugi.pdf;industry 4.0;0.7247396260830972
-kooping.pdf;industry 4.0;0.8526352554612563
-lancey.pdf;energy transition;0.9926131611247819
-laserco.pdf;new materials;0.9918978350125724
-latannerievegetale.pdf;new materials;0.6897702329045777
-leviathandynamics2.pdf;energy transition;0.7085764664125107
-lichens.pdf;new materials;0.9752059912204407
-lionvolt.pdf;energy transition;0.9908666114994706
-lithcote.pdf;energy transition;0.8147644323388097
-litherm.pdf;energy transition;0.9789832750693653
-maana.pdf;energy transition;0.9874552181960471
-machine2humansolutions.pdf;industry 4.0;0.9766666299875962
-magreesource.pdf;new materials;0.9773091964985562
-manaa.pdf;energy transition;0.9770774504971029
-mantispectra.pdf;new materials;0.712383228450828
-mariepoppies.pdf;energy transition;0.5692985265781153
-matvision.pdf;industry 4.0;0.9431296897533158
-mcve.pdf;industry 4.0;0.5581296171680482
-mcve3.pdf;industry 4.0;0.7554136206733164
-mcve4.pdf;industry 4.0;0.8776848954071015
-meam.pdf;others;0.9913780296964221
-mecabotix.pdf;industry 4.0;0.9886784790502697
-mecawareA.pdf;energy transition;0.9750808312625063
-metaliq.pdf;energy transition;0.9965148298186244
-mirsense.pdf;industry 4.0;0.9983784435288287
-mitis.pdf;energy transition;0.9935928800825281
-mobenergy.pdf;energy transition;0.906146541475213
-mobilitywork.pdf;industry 4.0;0.9865292489889299
-mobito.pdf;industry 4.0;0.9475803839087915
-moiz.pdf;energy transition;0.958932661668489
-molecularplasmagroup.pdf;new materials;0.9755905359726436
-muodim.pdf;energy transition;0.9745263420522874
-myjiminy.pdf;others;0.9905359055616424
-nanoz.pdf;industry 4.0;0.9966529233607493
-nature2need.pdf;new materials;0.9914924007247408
-neextengineering.pdf;energy transition;0.8222253248872282
-nestwave.pdf;industry 4.0;0.9846714899156782
-neurala.pdf;industry 4.0;0.6809484133420484
-nextind.pdf;industry 4.0;0.9642256082096988
-nexwafe.pdf;energy transition;0.9788261424166272
-nexxoil.pdf;energy transition;0.703255312609876
-nexxtlab.pdf;energy transition;0.9742884147934333
-nimbleone.pdf;industry 4.0;0.9787532461416195
-nimesis.pdf;new materials;0.9843188317235854
-novacarbon.pdf;new materials;0.9778583086565658
-novali3.pdf;energy transition;0.9981487544737659
-novocycle.pdf;energy transition;0.9977374346810869
-novomof.pdf;new materials;0.9906025780977622
-obeia.pdf;industry 4.0;0.9805549556732068
-octofan.pdf;energy transition;0.6962341738731226
-oghji.pdf;energy transition;0.888543624128126
-ollow.pdf;others;0.9764713349252206
-onewatt.pdf;industry 4.0;0.9896007137446834
-oppr.pdf;industry 4.0;0.9054907864809528
-otiv.pdf;industry 4.0;0.9930392150835886
-otiv2.pdf;industry 4.0;0.9773539816938867
-ouat!.pdf;industry 4.0;0.9478080048262943
-oxylum.pdf;energy transition;0.9990212764420037
-packwise.pdf;industry 4.0;0.839329139604221
-pathrobotics.pdf;industry 4.0;0.9852375238749053
-pepps.pdf;industry 4.0;0.9436126139171294
-phoenixai.pdf;industry 4.0;0.9629285421637978
-phytonics.pdf;energy transition;0.9999715688726522
-polypea.pdf;new materials;0.9951787924463492
-powerlubecontrol.pdf;industry 4.0;0.9700234087237201
-pozyx.pdf;industry 4.0;0.9706742510051934
-propellane.pdf;energy transition;0.9735187894993059
-purenat2.pdf;new materials;0.9825542125699973
-pydro.pdf;energy transition;0.9443164102427697
-qualitics.pdf;energy transition;0.804638594872364
-reeverse.pdf;industry 4.0;0.999200736162133
-rein4ced.pdf;new materials;0.9780511017254415
-rejuice.pdf;energy transition;0.9981802968767358
-renewind.pdf;energy transition;0.9733484581389182
-replace.pdf;others;0.9206109480106356
-ridergy.pdf;industry 4.0;0.8972365374794867
-rift.pdf;energy transition;0.8830285146777995
-roav7.pdf;industry 4.0;0.9293557607405311
-rosi.pdf;energy transition;0.9208245607932549
-roth2.pdf;energy transition;0.9557641902388683
-rovenso.pdf;industry 4.0;0.9954207916873684
-sakowin.pdf;energy transition;0.9787448135131851
-saturnetechnology.pdf;industry 4.0;0.9305997002819621
-senergetics.pdf;industry 4.0;0.9997448263352259
-senodis.pdf;industry 4.0;0.990474788022503
-senorics.pdf;industry 4.0;0.9771550640620599
-senseven.pdf;industry 4.0;0.9933579857404794
-sereema.pdf;energy transition;0.9693206117489684
-sesam.pdf;industry 4.0;0.9542005734811972
-shayp.pdf;others;0.9640988784469706
-sironatechnologies.pdf;energy transition;0.9976917681860488
-skydrone.pdf;others;0.9784349530868394
-sogilis.pdf;industry 4.0;0.9969300063265627
-soluterials.pdf;new materials;0.9910435749438962
-soomiq.pdf;energy transition;0.9597883642282097
-spark2.pdf;energy transition;0.9556543461536983
-spotlight.pdf;industry 4.0;0.9985056454013477
-spreeinteractive.pdf;others;0.9824739329644686
-squairtech.pdf;new materials;0.9884392487294856
-staaq.pdf;energy transition;0.968130206427381
-stabilogreen.pdf;new materials;0.9825263064683064
-starcopter.pdf;energy transition;0.9068651801598147
-stargate.pdf;energy transition;0.9761708257348672
-storh.pdf;energy transition;0.9746293149195376
-sublimeenergie.pdf;energy transition;0.9917806487271231
-sunlion.pdf;energy transition;0.9854328254268209
-sunmaxx.pdf;energy transition;0.9946966772269178
-sunmaxx2.pdf;energy transition;0.9770585244428304
-supairvision.pdf;energy transition;0.944904952407563
-swanh.pdf;energy transition;0.9532485945924899
-swoopenergy.pdf;energy transition;0.9314393424800257
-sylfen.pdf;energy transition;0.9950055041245225
-teeptrak2.pdf;industry 4.0;0.994864829692925
-terakalis.pdf;industry 4.0;0.999767834359533
-teratonics.pdf;industry 4.0;0.9981036318290267
-theyeq.pdf;industry 4.0;0.9998949199177154
-threedy.pdf;industry 4.0;0.9736421685881614
-tiamat.pdf;energy transition;0.9461941448079538
-tihive.pdf;industry 4.0;0.9307577969703804
-torwash.pdf;energy transition;0.7941947900791747
-tozero.pdf;energy transition;0.8996517317935561
-tractonomy.pdf;industry 4.0;0.9831617842903327
-turbit.pdf;industry 4.0;0.9697844918451909
-turbulent.pdf;energy transition;0.9500633281492129
-twikit.pdf;industry 4.0;0.9863440931241686
-twinsity.pdf;industry 4.0;0.9989638848333818
-uavia.pdf;industry 4.0;0.5580671117319835
-uware.pdf;industry 4.0;0.983741901213463
-uware2.pdf;industry 4.0;0.983741901213463
-uze.pdf;energy transition;0.44339860230471523
-v2i.pdf;industry 4.0;0.9178038447697566
-variolytics.pdf;industry 4.0;0.9310024663131473
-vernaio.pdf;industry 4.0;0.982392377990697
-viridianlithium.pdf;energy transition;0.9619890060153766
-visiontechnology.pdf;energy transition;0.8244191350912935
-visplore.pdf;industry 4.0;0.9714682751841933
-vocsens.pdf;industry 4.0;0.9820855959490845
-voleatech.pdf;industry 4.0;0.9831990522444494
-vulkam.pdf;new materials;0.9842087434083671
-wainvame.pdf;industry 4.0;0.901476342055349
-waterhorizon.pdf;energy transition;0.9656754064207618
-waterstuffsun.pdf;energy transition;0.9981750677453616
-watt4ever.pdf;energy transition;0.9879402299454353
-wattalps.pdf;energy transition;0.9893337530498271
-wayout.pdf;others;0.9899184542635543
-wespran.pdf;energy transition;0.9975939365834406
-wiidetect.pdf;industry 4.0;0.9633970421114257
-windfisher.pdf;energy transition;0.9801360135602442
-wizata.pdf;industry 4.0;0.987620054747774
-worms2.pdf;new materials;0.9819193339383842
-xeryon.pdf;industry 4.0;0.9768944766638834
-yazzoom.pdf;industry 4.0;0.9801638924117084
-ysenergiesmarines.pdf;energy transition;0.9948338341569808
-zensor.pdf;industry 4.0;0.8294765297432851
-zeppsolutions.pdf;energy transition;0.994126284402132
-zorabots.pdf;industry 4.0;0.959155499878465
+247energy.pdf;energy transition;0.9977859696888379
+actronika.pdf;others;0.9896502026135874
+adlatusrobotics.pdf;industry 4.0;0.9052035057425442
+adlc.pdf;industrie 4.0;0.9491264083040997
+aerleum.pdf;energy transition;0.9910737031552158
+aiblox.pdf;industry 4.0;0.9943002140705149
+airbooster.pdf;energy transition;0.8783317653192254
+aircision.pdf;industry 4.0;0.8139392142623537
+airthium.pdf;industry 4.0;0.6503849803682892
+aithra.pdf;industry 4.0;0.9913037449105827
+akryvia.pdf;others;0.9086238406583902
+akvola.pdf;others;0.9781000768768988
+alberts.pdf;others;0.9537066051482471
+aloecell.pdf;energy transition;0.8338592631848452
+alouette.pdf;industry 4.0;0.9782520674081552
+aloxy.pdf;industry 4.0;0.9936836700913255
+altosolution.pdf;energy transition;0.9935409808921735
+altransenergy.pdf;industry 4.0;0.8623890011645875
+amethyste.pdf;industry 4.0;0.9361067811816501
+amflow.pdf;industry 4.0;0.9577998397769887
+amiraltechnologies.pdf;industry 4.0;0.9546202106402378
+anabrid.pdf;new materials;0.99578673606754
+ananke.pdf;energy transition;0.9242093215978271
+angara.pdf;energy transition;0.9382376563184014
+anisoprint.pdf;new materials;0.9859292138026359
+appsilon.pdf;others;0.9196323911395152
+aprexsolutions.pdf;industry 4.0;0.9892187143813995
+aquilae.pdf;industry 4.0;0.523278681078456
+aredox.pdf;energy transition;0.9447494150034208
+arkcapturesolutions.pdf;energy transition;0.9906833375753632
+arkeocean.pdf;others;0.9781927629590387
+askforthemoon.pdf;industry 4.0;0.9898143235427839
+askforthemoon2.pdf;industry 4.0;0.943711002223364
+astriis.pdf;industry 4.0;0.8869180251937631
+atmocoat.pdf;new materials;0.9897607411650691
+avoxt.pdf;energy transition;0.9517200514548246
+awakemobility.pdf;others;0.9680493869763058
+azteq.pdf;energy transition;0.9047047008099757
+azteq2.pdf;energy transition;0.864872287331442
+batiprint3d.pdf;industry 4.0;0.8773238241679397
+beagle.pdf;others;0.8831276132290145
+bianergy2.pdf;others;0.9016317986511281
+biocide.pdf;industry 4.0;0.9258544605902003
+blixt.pdf;energy transition;0.9605892084136959
+bloom.pdf;energy transition;0.9648040251175366
+bluepowersynergy.pdf;energy transition;0.9981001006028948
+bondzai.pdf;industry 4.0;0.9778478280849763
+bonidriver.pdf;others;0.9643529329072216
+borealesenergy.pdf;energy transition;0.971370300903527
+brighterbins.pdf;energy transition;0.8769182409418645
+brolz.pdf;industrie 4.0;0.9537899559186127
+bulane.pdf;energy transition;0.976678039972643
+carbodown.pdf;energy transition;0.9448696837697235
+carbon8.pdf;energy transition;0.8148578338479363
+carbyon2.pdf;energy transition;0.9633910079492763
+chemalive.pdf;new materials;0.9748071872153257
+chemicalnewtech.pdf;energy transition;0.7770336490055494
+cilkoa.pdf;new materials;0.9866058521773353
+cixten.pdf;energy transition;0.9847460467909073
+clhynn.pdf;energy transition;0.954385731680297
+cognifab.pdf;industry 4.0;0.9732834803637483
+coldpad.pdf;others;0.9148264223687494
+coldpad2.pdf;others;0.9371740917324196
+companionenergy.pdf;energy transition;0.9709904036273511
+comppair.pdf;new materials;0.9753315120074388
+comsens.pdf;industry 4.0;0.981765564855672
+condugo.pdf;energy transition;0.9243760165567967
+cosmotech.pdf;industry 4.0;0.9171058338251097
+covess.pdf;industry 4.0;0.9637938248996877
+credoxys.pdf;new materials;0.9761274780240767
+ctrlenergy.pdf;energy transition;0.9969310898059589
+cybus.pdf;industry 4.0;0.9571670130520886
+dacma.pdf;energy transition;0.7639031066870189
+deephawk.pdf;industry 4.0;0.9988339299366231
+deloq.pdf;industry 4.0;0.9328626967322412
+diamfab.pdf;others;0.984486040469735
+dimpora.pdf;new materials;0.9850073210229645
+dionymer.pdf;new materials;0.9760903604118975
+dotocean.pdf;others;0.976165532047202
+dragonflypads2.pdf;others;0.9480992183543239
+dronematrix.pdf;industry 4.0;0.7474697868379804
+dropslab.pdf;industry 4.0;0.934167098483416
+dryad.pdf;others;0.9784270450935857
+ecellix.pdf;energy transition;0.8085656912405946
+echemicles.pdf;energy transition;0.9930583781451575
+eco2grow.pdf;energy transition;0.9525275914510216
+ecobot.pdf;industry 4.0;0.9973731659685153
+ecop.pdf;industrie 4.0;0.9394697451990708
+edgetech.pdf;industry 4.0;0.9459091694388327
+edock.pdf;others;0.9770337232984051
+effectsphotonics.pdf;industrie 4.0;0.9813609692630394
+effitrax.pdf;industry 4.0;0.9537410649724395
+ehgroup.pdf;energy transition;0.9372745068030679
+electriq.pdf;energy transition;0.9841360214149366
+electrochaea.pdf;energy transition;0.9213821817391774
+elugie.pdf;energy transition;0.9999715932707385
+enadyne.pdf;energy transition;0.8986347642546225
+enhywhere2.pdf;energy transition;0.9847732501810084
+enosis.pdf;energy transition;0.9991975679576528
+enow.pdf;energy transition;0.8670119035823305
+enprove.pdf;energy transition;0.8375702857392722
+entent.pdf;energy transition;0.9389955614117518
+entras.pdf;energy transition;0.9442751206514658
+equinox.pdf;energy transition;0.8806578362058277
+equinox_v1.pdf;energy transition;0.8806578362058277
+esnah.pdf;others;0.9625063606004508
+eternalpower.pdf;energy transition;0.9656930522219767
+ethernics.pdf;energy transition;0.9564169864506363
+everysens.pdf;energy transition;0.9792810844640758
+exanodia.pdf;industry 4.0;0.5767712068205514
+exomatter.pdf;industry 4.0;0.9698929535965837
+extracthive.pdf;new materials;0.9975509516308844
+farwind.pdf;energy transition;0.9997438806845402
+fibersail2.pdf;energy transition;0.9783304657191089
+flasc.pdf;energy transition;0.9810133138633442
+flasc2.pdf;energy transition;0.9589501518161373
+flyability.pdf;industry 4.0;0.9772326812693158
+flyability2.pdf;industry 4.0;0.8287366891202248
+followinspiration.pdf;industry 4.0;0.999094487275337
+forecastyai.pdf;industry 4.0;0.9662319199362515
+fountainfuel.pdf;energy transition;0.9364514085070162
+genesink.pdf;new materials;0.9842589176102746
+genhy.pdf;energy transition;0.9985988949490769
+geolith.pdf;others;0.9341660479959808
+getyourway.pdf;industry 4.0;0.9197414802994177
+ghyga.pdf;energy transition;0.9709949539339024
+grandperspective.pdf;industry 4.0;0.9909188075907426
+gravithy.pdf;energy transition;0.9861504246289231
+greengentech.pdf;others;0.9794141482782391
+greenyenergyag.pdf;energy transition;0.8709469409844957
+grizit.pdf;industry 4.0;0.9987832370357073
+grownbio.pdf;others;0.9993119918896939
+h2sys.pdf;energy transition;0.8888157351352334
+hace.pdf;energy transition;0.9497796295126106
+hawaitech.pdf;industry 4.0;0.960031625495103
+hbat.pdf;energy transition;0.9996104841702054
+heliac.pdf;energy transition;0.9822576578783659
+heliup2.pdf;energy transition;0.9928720696057372
+hevatech.pdf;energy transition;0.9577686547463619
+hexana.pdf;energy transition;0.9771550457017584
+highline.pdf;new materials;0.964280395083196
+hiqutediamond.pdf;new materials;0.8979025285640859
+hoeller.pdf;energy transition;0.9855977707704102
+holosolis.pdf;energy transition;0.99660173184975
+holy.pdf;new materials;0.9671769217653745
+huskk.pdf;industry 4.0;0.9457082337754211
+hysilabs.pdf;energy transition;0.9650963383151596
+hyve.pdf;energy transition;0.9936143886934368
+hywaves.pdf;energy transition;0.9971281897454766
+icodos.pdf;energy transition;0.9879047814224197
+imsystems.pdf;industry 4.0;0.9989567417037573
+independentlivingbase.pdf;others;0.9995497249256886
+ineratec.pdf;energy transition;0.9181390233877071
+infiniciag.pdf;new materials;0.9747176689649016
+inflights.pdf;industry 4.0;0.773917423322381
+infrasolid.pdf;industry 4.0;0.9695773172283938
+inphocal.pdf;industry 4.0;0.968648341948309
+insens.pdf;industry 4.0;0.7798912583027344
+intelligentfluids.pdf;others;0.9730523520344568
+internest.pdf;others;0.993121875643993
+inuse.pdf;industry 4.0;0.9536431515626589
+ionics.pdf;new materials;0.994204262079109
+ipsumtek.pdf;industry 4.0;0.9047229468590411
+iqrypto.pdf;new materials;0.5041273696705999
+iqunet.pdf;industry 4.0;0.9704386428888931
+istya.pdf;industry 4.0;0.927341036633017
+japet.pdf;industrie 4.0;0.985857052439953
+keeyaerogel.pdf;new materials;0.9890010583656976
+keeyaerogel2.pdf;new materials;0.9922953849882433
+keiron.pdf;industrie 4.0;0.9755057851595144
+kemiwatt.pdf;energy transition;0.9803030734714039
+kheoos.pdf;industry 4.0;0.8258898305301063
+komugi.pdf;industrie 4.0;0.9162272834858888
+kooping.pdf;industrie 4.0;0.9952431479708063
+koremetals.pdf;energy transition;0.5286812902852437
+lancey.pdf;energy transition;0.9986920524819414
+laserco.pdf;new materials;0.9841229743042587
+latannerievegetale.pdf;others;0.9906113451529854
+leviathandynamics2.pdf;energy transition;0.7246622788671304
+lichens.pdf;new materials;0.9740893679922933
+lionvolt.pdf;energy transition;0.9999390756584321
+lithcote.pdf;energy transition;0.758424090975088
+litherm.pdf;energy transition;0.9140927279021723
+maana.pdf;energy transition;0.9953695102935263
+machine2humansolutions.pdf;industrie 4.0;0.9874225264167704
+magreesource.pdf;new materials;0.9526775786804381
+manaa.pdf;energy transition;0.9593554530638619
+mantispectra.pdf;industrie 4.0;0.9869371370372636
+mariepoppies.pdf;others;0.9042366850312038
+matvision.pdf;industry 4.0;0.925481597851456
+mcve.pdf;industrie 4.0;0.9970318810492838
+mcve3.pdf;industrie 4.0;0.9844620738287873
+mcve4.pdf;industry 4.0;0.7725757523631592
+meam.pdf;others;0.9709941985460571
+mecabotix.pdf;industry 4.0;0.9992214615072874
+mecawareA.pdf;energy transition;0.9734529330157211
+metaliq.pdf;energy transition;0.9955639690476535
+mirsense.pdf;industry 4.0;0.9931895743475263
+mitis.pdf;energy transition;0.9996853652405887
+mobenergy.pdf;energy transition;0.8965883249939444
+mobilitywork.pdf;industry 4.0;0.8382365451729998
+mobito.pdf;industrie 4.0;0.9701260948438998
+moiz.pdf;energy transition;0.778088794096039
+molecularplasmagroup.pdf;new materials;0.9248464335059533
+muodim.pdf;energy transition;0.9735579387141418
+myjiminy.pdf;others;0.986000715948915
+nanoz.pdf;industry 4.0;0.9951219439102806
+nature2need.pdf;new materials;0.9940029775243986
+neextengineering.pdf;energy transition;0.9037468511210686
+nestwave.pdf;industry 4.0;0.9202953047869693
+neurala.pdf;industrie 4.0;0.9898313776124803
+nextind.pdf;industry 4.0;0.9783085278185101
+nexwafe.pdf;energy transition;0.9660346725384498
+nexxoil.pdf;others;0.9267079645561797
+nexxtlab.pdf;energy transition;0.9682653526676788
+nimbleone.pdf;industry 4.0;0.968139974239028
+nimesis.pdf;new materials;0.9862817174563664
+novacarbon.pdf;new materials;0.9740953532259107
+novali3.pdf;energy transition;0.9997861496735945
+novocycle.pdf;energy transition;0.9976831519607381
+novomof.pdf;new materials;0.9667659932773477
+obeia.pdf;industrie 4.0;0.9414516245865653
+octofan.pdf;others;0.9778061514959829
+oghji.pdf;energy transition;0.8248970746500771
+ollow.pdf;others;0.9637766118049267
+onewatt.pdf;industry 4.0;0.9656481784930953
+oppr.pdf;industry 4.0;0.7487920553683927
+otiv.pdf;industry 4.0;0.9899001079274523
+otiv2.pdf;industry 4.0;0.9792449784269662
+ouat!.pdf;industry 4.0;0.9233969170184524
+oxylum.pdf;energy transition;0.9681481588638526
+packwise.pdf;industry 4.0;0.8744328781152106
+pathrobotics.pdf;industry 4.0;0.961081068511774
+pepps.pdf;industry 4.0;0.9507641702341807
+phoenixai.pdf;industry 4.0;0.9885774633043657
+phytonics.pdf;energy transition;0.9723853967252377
+polypea.pdf;new materials;0.9740282204741775
+powerlubecontrol.pdf;industry 4.0;0.9649210808040996
+pozyx.pdf;industry 4.0;0.9045700657060864
+propellane.pdf;energy transition;0.9857532024122376
+purenat2.pdf;new materials;0.9735784997205005
+pydro.pdf;energy transition;0.9200287970567081
+qualitics.pdf;energy transition;0.505879727344113
+reeverse.pdf;industry 4.0;0.9920004894566103
+rein4ced.pdf;new materials;0.9730701445174671
+rejuice.pdf;energy transition;0.9999894494492673
+renewind.pdf;energy transition;0.9955163796471098
+replace.pdf;others;0.9306983069329952
+ridergy.pdf;industry 4.0;0.7729591804372434
+rift.pdf;energy transition;0.9048994745790014
+roav7.pdf;industry 4.0;0.942709447028558
+rosi.pdf;energy transition;0.9340002680348927
+roth2.pdf;energy transition;0.9388074065386105
+rovenso.pdf;industry 4.0;0.991659289678948
+sakowin.pdf;energy transition;0.9783618156029354
+saturnetechnology.pdf;industry 4.0;0.9140440328227515
+senergetics.pdf;industry 4.0;0.979779224769207
+senodis.pdf;industry 4.0;0.9956956316215703
+senorics.pdf;industry 4.0;0.8888384660737205
+senseven.pdf;industry 4.0;0.9997044496302512
+sereema.pdf;energy transition;0.9026949047144335
+sesam.pdf;others;0.8710096681957007
+shayp.pdf;others;0.9640487467606607
+sironatechnologies.pdf;energy transition;0.9986167764016926
+skydrone.pdf;others;0.9558077924453274
+sogilis.pdf;industry 4.0;0.9997314003620549
+soluterials.pdf;new materials;0.9945992461466461
+soomiq.pdf;energy transition;0.8342931301495451
+spark2.pdf;energy transition;0.943392672620929
+spotlight.pdf;industry 4.0;0.9899763299032373
+spreeinteractive.pdf;others;0.9870132688330135
+squairtech.pdf;new materials;0.9905519562389113
+staaq.pdf;energy transition;0.9981139721738899
+stabilogreen.pdf;new materials;0.9692880648822243
+starcopter.pdf;energy transition;0.8728937648849976
+stargate.pdf;energy transition;0.9833051330223842
+storh.pdf;energy transition;0.9737568788542603
+sublimeenergie.pdf;energy transition;0.9849681520853696
+sunlion.pdf;energy transition;0.9937214335993362
+sunmaxx.pdf;energy transition;0.9944563566670706
+sunmaxx2.pdf;energy transition;0.9825003739686216
+supairvision.pdf;energy transition;0.9035639108983334
+swanh.pdf;energy transition;0.9554964833122223
+swoopenergy.pdf;energy transition;0.9682349717082327
+sylfen.pdf;energy transition;0.9973382449060949
+teeptrak2.pdf;industry 4.0;0.9781559305833494
+terakalis.pdf;industry 4.0;0.9997208783851725
+teratonics.pdf;industry 4.0;0.9994960633489943
+theyeq.pdf;industry 4.0;0.9999867278615984
+threedy.pdf;industry 4.0;0.9709101656086709
+tiamat.pdf;energy transition;0.9379964665386218
+tihive.pdf;industry 4.0;0.9330633768819873
+torwash.pdf;energy transition;0.9360600873551763
+tozero.pdf;energy transition;0.9378959597075367
+tractonomy.pdf;industrie 4.0;0.9702380955409322
+turbit.pdf;industry 4.0;0.941878984675034
+turbulent.pdf;energy transition;0.8907046760320283
+twikit.pdf;industry 4.0;0.9538166164861018
+twinsity.pdf;industry 4.0;0.9991524642701403
+uavia.pdf;industrie 4.0;0.9920831839280668
+uware.pdf;industrie 4.0;0.9953671864208966
+uware2.pdf;industrie 4.0;0.9953671864208966
+uze.pdf;energy transition;0.8011304922511718
+v2i.pdf;industrie 4.0;0.9865024348590661
+variolytics.pdf;industry 4.0;0.8618953915649031
+vernaio.pdf;industry 4.0;0.9903714947659237
+viridianlithium.pdf;energy transition;0.9285604562884043
+visiontechnology.pdf;energy transition;0.758148799892594
+visplore.pdf;industry 4.0;0.900036605925918
+vocsens.pdf;industry 4.0;0.9540986610189337
+voleatech.pdf;industry 4.0;0.9769960417038265
+vulkam.pdf;new materials;0.9743907487535266
+wainvame.pdf;industry 4.0;0.8719969072874871
+waterhorizon.pdf;energy transition;0.8933784566777591
+waterstuffsun.pdf;energy transition;0.9997706019337373
+watt4ever.pdf;energy transition;0.9958651201926458
+wattalps.pdf;energy transition;0.9979091509966372
+wayout.pdf;others;0.9790881590426336
+wespran.pdf;energy transition;0.9972272864555585
+wiidetect.pdf;industry 4.0;0.9259678692836792
+windfisher.pdf;energy transition;0.9995110163446964
+wizata.pdf;industry 4.0;0.9867885225757999
+worms2.pdf;new materials;0.9616676076668454
+xeryon.pdf;industry 4.0;0.9913123858672693
+yazzoom.pdf;industry 4.0;0.9998609118115527
+ysenergiesmarines.pdf;energy transition;0.951550728624864
+zensor.pdf;industrie 4.0;0.9912774666869139
+zeppsolutions.pdf;energy transition;0.9977726454947893
+zorabots.pdf;industry 4.0;0.9923973378007339

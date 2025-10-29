@@ -60,7 +60,7 @@ def train_country():
     df = pd.merge(df_vectors, df_labels, on="doc", how="inner").dropna(subset=["country_y"])
 
     # Suppression de colonnes non pertinentes pour la prédiction
-    df = df.drop(columns=["label", "domain", "client", "revenu", "gotomarket", "startup", "produit"], errors="ignore")
+    df = df.drop(columns=["label", "domain"], errors="ignore")
 
     # --- Préparation des features (X) et de la target (y) ---
     X_df = df.drop(columns=["doc", "country_y"], errors="ignore")

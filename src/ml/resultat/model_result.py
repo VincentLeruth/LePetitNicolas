@@ -51,7 +51,7 @@ def train_result():
 
     # --- Nettoyer les labels ---
     # On garde uniquement les labels appartenant à la liste des valeurs autorisées
-    allowed_labels = ["Interessant", "Unfavorable", "Very Unfavorable", "Out"]
+    allowed_labels = ["Interesting", "Unfavorable", "Very Unfavorable", "Out"]
     df_labels = df_labels[df_labels["result"].isin(allowed_labels)]
 
     # --- Filtrer les vecteurs ---
