@@ -16,7 +16,7 @@ DECKS_DIR = os.path.join(BASE_DIR, "data", "decks")
 TRANSLATED_DIR = os.path.join(BASE_DIR, "data", "processed", "translated")
 
 # --- Configuration page ---
-st.set_page_config(page_title="Scoring App", page_icon="🎯", layout="centered")
+st.set_page_config(page_title="Le petit Nicolas", page_icon="🎯", layout="wide")
 
 # --- Initialisation session state ---
 if "page" not in st.session_state:
@@ -45,7 +45,7 @@ def go_to(page_name):
 
 # --- Menu principal ---
 if st.session_state.page == "menu":
-    st.title("🎯 Scoring App")
+    st.title("🎯 Le petit Nicolas")
     st.subheader("Choisissez une action :")
     col1, col2 = st.columns(2)
     with col1:
@@ -61,12 +61,14 @@ elif st.session_state.page == "train":
     st.write("👉 Ici tu peux labelliser les decks non traités et lancer l'entraînement des modèles.")
 
     # 🔥 Appel du module d’entraînement (UI)
+    from ui.train import run_training_ui
     run_training_ui()
 
-    # Bouton retour au menu
+    # --- Bouton retour au menu ---
     st.markdown("---")
     if st.button("⬅️ Retour au menu principal"):
         go_to("menu")
+
 
 # --- Page analyse ---
 elif st.session_state.page == "analyze":
