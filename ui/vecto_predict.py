@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 
 # Import des modules existants pour vectorisation et prédictions
 from src.vectorisation.vectorize_text import vectorize_text
@@ -6,6 +7,8 @@ from src.ml.domain.predict_domain import predict_domain
 from src.ml.country.predict_country import predict_country
 from src.ml.tech.predict_tech import predict_tech
 from src.ml.resultat.predict_resultat import predict_resultat
+
+from commite_github import commit_file_to_github
 
 """
 Module Streamlit pour la vectorisation TF-IDF et les prédictions automatiques.
@@ -18,6 +21,8 @@ Fonctionnalités :
 - Gestion de l'état via `st.session_state` pour éviter les doublons et suivre la progression.
 """
 
+BASE_DIR = os.path.dirname(__file__)
+VECT_PATH = os.path.join(BASE_DIR, "..", "data", "processed", "tfidf_vectors.csv")
 
 def run_vectorize_and_predict_ui():
     """
@@ -58,15 +63,27 @@ def run_vectorize_and_predict_ui():
         st.session_state.predictions_done = False
 
     # --- Étape 1 : Vectorisation ---
-    if not st.session_state.vectorization_done:
+    if not st.session_state.vectorization_done and st.session_state.get("saved_uploaded_files", False):
         if st.button("⚙️ Lancer la vectorisation TF-IDF"):
             with st.spinner("Vectorisation en cours..."):
                 try:
-                    vectorize_text()
+                    # ⚡ On met le flag à True avant le commit pour éviter le "retour arrière"
                     st.session_state.vectorization_done = True
+
+                    # Exécution de la vectorisation
+                    vectorize_text()
+
+                    # Commit sur Git
+                    commit_file_to_github(
+                        VECT_PATH,
+                        "data/processed/tfidf_vectors.csv",
+                        "Mise à jour des vecteurs TF-IDF"
+                    )
+
                     st.success("✅ Vectorisation terminée avec succès ! Les vecteurs ont été sauvegardés.")
-                    st.rerun()  # 🔁 Recharge la page pour cacher le bouton
+                    st.rerun()  # Recharge la page pour cacher le bouton
                 except Exception as e:
+                    st.session_state.vectorization_done = False  # Reset si erreur
                     st.error(f"❌ Erreur pendant la vectorisation : {e}")
             st.stop()
 
@@ -76,10 +93,22 @@ def run_vectorize_and_predict_ui():
         if st.button("🤖 Lancer les prédictions sur tous les modèles"):
             with st.spinner("Prédictions en cours..."):
                 try:
+                    PRED_DIR = os.path.join(BASE_DIR, "..", "output", "predictions")
+                    os.makedirs(PRED_DIR, exist_ok=True)
+
                     predict_domain()
                     predict_country()
                     predict_tech()
                     predict_resultat()
+
+                    # --- Commit automatique des CSV de prédiction ---
+                    for fname in os.listdir(PRED_DIR):
+                        fpath = os.path.join(PRED_DIR, fname)
+                        if os.path.isfile(fpath):
+                            commit_file_to_github(fpath,
+                                                f"output/predictions/{fname}",
+                                                f"Mise à jour des prédictions : {fname}")
+
                     st.session_state.predictions_done = True
                     st.success("🎯 Toutes les prédictions ont été effectuées avec succès !")
                     st.rerun()  # 🔁 Recharge pour masquer le bouton de prédiction

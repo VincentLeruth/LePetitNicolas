@@ -1,4 +1,5 @@
 doc;predicted_resultat;confidence_score
+<<<<<<< HEAD
 247energy.pdf;Unfavorable;0.35
 actronika.pdf;Very Unfavorable;0.768
 adlatusrobotics.pdf;Very Unfavorable;0.764
@@ -328,3 +329,337 @@ ysenergiesmarines.pdf;Very Unfavorable;0.706
 zensor.pdf;Unfavorable;0.8091604938271605
 zeppsolutions.pdf;Very Unfavorable;0.8
 zorabots.pdf;Very Unfavorable;0.7400221148684916
+=======
+247energy.pdf;Unfavorable;0.342
+actronika.pdf;Very Unfavorable;0.74
+adlatusrobotics.pdf;Very Unfavorable;0.756
+adlc.pdf;Out;0.702
+aerleum.pdf;Very Unfavorable;0.714
+aiblox.pdf;Out;0.75
+airbooster.pdf;Unfavorable;0.418
+aircision.pdf;Unfavorable;0.794
+airthium.pdf;Very Unfavorable;0.758
+aithra.pdf;Very Unfavorable;0.736
+akryvia.pdf;Unfavorable;0.37
+akvola.pdf;Unfavorable;0.37
+alberts.pdf;Interessant;0.648
+aloecell.pdf;Unfavorable;0.364
+alouette.pdf;Unfavorable;0.808
+aloxy.pdf;Very Unfavorable;0.692
+altosolution.pdf;Very Unfavorable;0.71
+altransenergy.pdf;Very Unfavorable;0.74
+amethyste.pdf;Unfavorable;0.764
+amflow.pdf;Very Unfavorable;0.704
+amiraltechnologies.pdf;Unfavorable;0.792
+anabrid.pdf;Very Unfavorable;0.674
+ananke.pdf;Unfavorable;0.752
+angara.pdf;Unfavorable;0.416
+anisoprint.pdf;Unfavorable;0.426
+appsilon.pdf;Interessant;0.65
+aprexsolutions.pdf;Very Unfavorable;0.752
+aquilae.pdf;Unfavorable;0.762
+aredox.pdf;Unfavorable;0.836
+arkcapturesolutions.pdf;Very Unfavorable;0.714
+arkeocean.pdf;Unfavorable;0.736
+askforthemoon.pdf;Unfavorable;0.794
+askforthemoon2.pdf;Unfavorable;0.812
+astriis.pdf;Interessant;0.654
+atmocoat.pdf;Unfavorable;0.766
+avoxt.pdf;Very Unfavorable;0.776
+awakemobility.pdf;Unfavorable;0.486
+azteq.pdf;Out;0.638
+azteq2.pdf;Out;0.738
+batiprint3d.pdf;Very Unfavorable;0.742
+beagle.pdf;Very Unfavorable;0.682
+bianergy2.pdf;Out;0.72
+biocide.pdf;Very Unfavorable;0.738
+blixt.pdf;Very Unfavorable;0.718
+bloom.pdf;Unfavorable;0.77
+bluepowersynergy.pdf;Out;0.722
+bondzai.pdf;Very Unfavorable;0.768
+bonidriver.pdf;Unfavorable;0.718
+borealesenergy.pdf;Very Unfavorable;0.752
+brighterbins.pdf;Very Unfavorable;0.758
+brolz.pdf;Unfavorable;0.412
+bulane.pdf;Out;0.694
+carbodown.pdf;Interessant;0.664
+carbon8.pdf;Very Unfavorable;0.716
+carbyon2.pdf;Out;0.666
+chemalive.pdf;Very Unfavorable;0.724
+chemicalnewtech.pdf;Unfavorable;0.766
+cilkoa.pdf;Very Unfavorable;0.762
+cixten.pdf;Out;0.724
+clhynn.pdf;Unfavorable;0.718
+cognifab.pdf;Unfavorable;0.744
+coldpad.pdf;Out;0.658
+coldpad2.pdf;Out;0.684
+companionenergy.pdf;Unfavorable;0.796
+comppair.pdf;Very Unfavorable;0.768
+comsens.pdf;Out;0.758
+condugo.pdf;Unfavorable;0.804
+cosmotech.pdf;Out;0.686
+covess.pdf;Unfavorable;0.76
+credoxys.pdf;Unfavorable;0.774
+ctrlenergy.pdf;Unfavorable;0.784
+cybus.pdf;Unfavorable;0.782
+dacma.pdf;Unfavorable;0.774
+deephawk.pdf;Out;0.69
+deloq.pdf;Out;0.74
+diamfab.pdf;Very Unfavorable;0.71
+dimpora.pdf;Out;0.618
+dionymer.pdf;Very Unfavorable;0.75
+dotocean.pdf;Unfavorable;0.754
+dragonflypads2.pdf;Out;0.692
+dronematrix.pdf;Out;0.742
+dropslab.pdf;Unfavorable;0.454
+dryad.pdf;Unfavorable;0.414
+ecellix.pdf;Unfavorable;0.79
+echemicles.pdf;Unfavorable;0.796
+eco2grow.pdf;Unfavorable;0.79
+ecobot.pdf;Out;0.712
+ecop.pdf;Unfavorable;0.4
+edgetech.pdf;Very Unfavorable;0.704
+edock.pdf;Out;0.686
+effectsphotonics.pdf;Unfavorable;0.354
+effitrax.pdf;Out;0.658
+ehgroup.pdf;Out;0.666
+electriq.pdf;Out;0.69
+electrochaea.pdf;Unfavorable;0.776
+elugie.pdf;Very Unfavorable;0.736
+enadyne.pdf;Interessant;0.684
+enhywhere2.pdf;Unfavorable;0.788
+enosis.pdf;Very Unfavorable;0.724
+enow.pdf;Very Unfavorable;0.716
+enprove.pdf;Very Unfavorable;0.696
+entent.pdf;Very Unfavorable;0.786
+entras.pdf;Very Unfavorable;0.722
+equinox.pdf;Unfavorable;0.452
+esnah.pdf;Very Unfavorable;0.708
+eternalpower.pdf;Unfavorable;0.772
+ethernics.pdf;Unfavorable;0.758
+everysens.pdf;Very Unfavorable;0.744
+exanodia.pdf;Unfavorable;0.484
+exomatter.pdf;Very Unfavorable;0.76
+extracthive.pdf;Very Unfavorable;0.734
+farwind.pdf;Unfavorable;0.764
+fibersail2.pdf;Unfavorable;0.76
+flasc.pdf;Out;0.744
+flasc2.pdf;Out;0.69
+flyability.pdf;Interessant;0.678
+flyability2.pdf;Unfavorable;0.782
+followinspiration.pdf;Unfavorable;0.394
+forecastyai.pdf;Unfavorable;0.78
+fountainfuel.pdf;Unfavorable;0.804
+genesink.pdf;Very Unfavorable;0.746
+genhy.pdf;Interessant;0.686
+geolith.pdf;Very Unfavorable;0.718
+getyourway.pdf;Interessant;0.67
+getyourway_v1.pdf;Interessant;0.67
+getyourway_v2.pdf;Interessant;0.67
+ghyga.pdf;Very Unfavorable;0.73
+grandperspective.pdf;Out;0.67
+gravithy.pdf;Unfavorable;0.744
+greengentech.pdf;Unfavorable;0.798
+greenyenergyag.pdf;Very Unfavorable;0.746
+grizit.pdf;Unfavorable;0.826
+grownbio.pdf;Very Unfavorable;0.752
+h2sys.pdf;Unfavorable;0.766
+hace.pdf;Very Unfavorable;0.734
+hawaitech.pdf;Unfavorable;0.78
+hbat.pdf;Unfavorable;0.76
+heliac.pdf;Interessant;0.708
+heliup2.pdf;Unfavorable;0.774
+hevatech.pdf;Very Unfavorable;0.746
+hexana.pdf;Very Unfavorable;0.716
+highline.pdf;Interessant;0.678
+hiqutediamond.pdf;Very Unfavorable;0.718
+hoeller.pdf;Unfavorable;0.746
+holosolis.pdf;Interessant;0.696
+holy.pdf;Unfavorable;0.368
+huskk.pdf;Interessant;0.59
+hysilabs.pdf;Very Unfavorable;0.686
+hyve.pdf;Interessant;0.682
+hywaves.pdf;Interessant;0.702
+icodos.pdf;Out;0.666
+imsystems.pdf;Unfavorable;0.776
+independentlivingbase.pdf;Unfavorable;0.758
+ineratec.pdf;Unfavorable;0.726
+infiniciag.pdf;Unfavorable;0.364
+inflights.pdf;Out;0.656
+infrasolid.pdf;Interessant;0.668
+inphocal.pdf;Out;0.712
+insens.pdf;Very Unfavorable;0.738
+intelligentfluids.pdf;Unfavorable;0.752
+internest.pdf;Very Unfavorable;0.766
+inuse.pdf;Unfavorable;0.782
+ionics.pdf;Unfavorable;0.45
+ipsumtek.pdf;Unfavorable;0.754
+iqrypto.pdf;Unfavorable;0.404
+iqunet.pdf;Unfavorable;0.776
+istya.pdf;Interessant;0.632
+japet.pdf;Unfavorable;0.376
+keeyaerogel.pdf;Unfavorable;0.498
+keeyaerogel2.pdf;Unfavorable;0.492
+keiron.pdf;Unfavorable;0.42
+kemiwatt.pdf;Unfavorable;0.778
+kheoos.pdf;Unfavorable;0.782
+komugi.pdf;Unfavorable;0.342
+kooping.pdf;Unfavorable;0.36
+koremetals.pdf;Unfavorable;0.444
+lancey.pdf;Unfavorable;0.47
+laserco.pdf;Out;0.688
+latannerievegetale.pdf;Unfavorable;0.406
+leviathandynamics2.pdf;Unfavorable;0.756
+lichens.pdf;Unfavorable;0.768
+lionvolt.pdf;Unfavorable;0.442
+lithcote.pdf;Unfavorable;0.374
+litherm.pdf;Unfavorable;0.754
+maana.pdf;Unfavorable;0.762
+machine2humansolutions.pdf;Unfavorable;0.41
+magreesource.pdf;Interessant;0.632
+manaa.pdf;Very Unfavorable;0.75
+mantispectra.pdf;Unfavorable;0.442
+mariepoppies.pdf;Very Unfavorable;0.366
+matvision.pdf;Out;0.374
+matvision_v1.pdf;Out;0.374
+mcve.pdf;Unfavorable;0.41
+mcve3.pdf;Unfavorable;0.522
+mcve4.pdf;Very Unfavorable;0.77
+meam.pdf;Very Unfavorable;0.754
+mecabotix.pdf;Very Unfavorable;0.742
+mecawareA.pdf;Unfavorable;0.758
+metaliq.pdf;Unfavorable;0.386
+mirsense.pdf;Unfavorable;0.788
+mitis.pdf;Interessant;0.674
+mobenergy.pdf;Unfavorable;0.776
+mobilitywork.pdf;Interessant;0.654
+mobito.pdf;Unfavorable;0.456
+moiz.pdf;Unfavorable;0.754
+molecularplasmagroup.pdf;Out;0.678
+muodim.pdf;Unfavorable;0.8
+myjiminy.pdf;Out;0.732
+nanoz.pdf;Unfavorable;0.766
+nature2need.pdf;Unfavorable;0.794
+neextengineering.pdf;Very Unfavorable;0.748
+nestwave.pdf;Very Unfavorable;0.744
+neurala.pdf;Unfavorable;0.528
+nextind.pdf;Very Unfavorable;0.746
+nexwafe.pdf;Very Unfavorable;0.714
+nexxoil.pdf;Unfavorable;0.358
+nexxtlab.pdf;Out;0.698
+nimbleone.pdf;Unfavorable;0.794
+nimesis.pdf;Very Unfavorable;0.746
+novacarbon.pdf;Interessant;0.686
+novali3.pdf;Unfavorable;0.73
+novocycle.pdf;Very Unfavorable;0.762
+novomof.pdf;Unfavorable;0.766
+obeia.pdf;Unfavorable;0.354
+octofan.pdf;Unfavorable;0.466
+oghji.pdf;Unfavorable;0.754
+ollow.pdf;Unfavorable;0.774
+onewatt.pdf;Unfavorable;0.766
+oppr.pdf;Unfavorable;0.744
+otiv.pdf;Unfavorable;0.734
+otiv2.pdf;Unfavorable;0.756
+ouat!.pdf;Unfavorable;0.766
+oxylum.pdf;Out;0.694
+packwise.pdf;Interessant;0.718
+pathrobotics.pdf;Unfavorable;0.798
+pepps.pdf;Very Unfavorable;0.702
+phoenixai.pdf;Out;0.762
+phytonics.pdf;Unfavorable;0.764
+polypea.pdf;Very Unfavorable;0.716
+powerlubecontrol.pdf;Unfavorable;0.784
+pozyx.pdf;Unfavorable;0.41
+propellane.pdf;Unfavorable;0.806
+purenat2.pdf;Interessant;0.658
+pydro.pdf;Unfavorable;0.728
+qualitics.pdf;Out;0.72
+reeverse.pdf;Interessant;0.688
+rein4ced.pdf;Unfavorable;0.812
+rejuice.pdf;Unfavorable;0.778
+renewind.pdf;Out;0.71
+replace.pdf;Unfavorable;0.774
+ridergy.pdf;Out;0.732
+rift.pdf;Interessant;0.688
+roav7.pdf;Very Unfavorable;0.724
+rosi.pdf;Out;0.714
+roth2.pdf;Unfavorable;0.802
+rovenso.pdf;Unfavorable;0.78
+sakowin.pdf;Unfavorable;0.784
+saturnetechnology.pdf;Unfavorable;0.782
+senergetics.pdf;Very Unfavorable;0.768
+senodis.pdf;Out;0.666
+senorics.pdf;Interessant;0.704
+senseven.pdf;Interessant;0.674
+sereema.pdf;Unfavorable;0.794
+sesam.pdf;Unfavorable;0.396
+shayp.pdf;Unfavorable;0.656
+shayp_v1.pdf;Unfavorable;0.444
+sironatechnologies.pdf;Unfavorable;0.77
+skydrone.pdf;Unfavorable;0.814
+sogilis.pdf;Very Unfavorable;0.714
+soluterials.pdf;Unfavorable;0.744
+soomiq.pdf;Interessant;0.624
+spark2.pdf;Out;0.7
+spotlight.pdf;Interessant;0.672
+spreeinteractive.pdf;Very Unfavorable;0.718
+squairtech.pdf;Out;0.674
+staaq.pdf;Unfavorable;0.754
+stabilogreen.pdf;Very Unfavorable;0.762
+starcopter.pdf;Unfavorable;0.764
+stargate.pdf;Unfavorable;0.756
+storh.pdf;Very Unfavorable;0.74
+sublimeenergie.pdf;Unfavorable;0.758
+sunlion.pdf;Very Unfavorable;0.734
+sunmaxx.pdf;Interessant;0.644
+sunmaxx2.pdf;Unfavorable;0.796
+supairvision.pdf;Very Unfavorable;0.706
+swanh.pdf;Unfavorable;0.77
+swoopenergy.pdf;Unfavorable;0.75
+sylfen.pdf;Unfavorable;0.38
+teeptrak2.pdf;Unfavorable;0.744
+terakalis.pdf;Unfavorable;0.762
+teratonics.pdf;Very Unfavorable;0.738
+theyeq.pdf;Unfavorable;0.78
+threedy.pdf;Unfavorable;0.758
+tiamat.pdf;Unfavorable;0.398
+tihive.pdf;Out;0.676
+torwash.pdf;Very Unfavorable;0.356
+tozero.pdf;Unfavorable;0.424
+tractonomy.pdf;Unfavorable;0.442
+turbit.pdf;Unfavorable;0.786
+turbulent.pdf;Unfavorable;0.386
+twikit.pdf;Very Unfavorable;0.71
+twinsity.pdf;Very Unfavorable;0.712
+uavia.pdf;Unfavorable;0.452
+uware.pdf;Unfavorable;0.394
+uware2.pdf;Unfavorable;0.394
+uze.pdf;Unfavorable;0.366
+v2i.pdf;Unfavorable;0.408
+variolytics.pdf;Unfavorable;0.77
+vernaio.pdf;Interessant;0.674
+viridianlithium.pdf;Unfavorable;0.404
+visiontechnology.pdf;Very Unfavorable;0.366
+visplore.pdf;Unfavorable;0.776
+vocsens.pdf;Out;0.726
+voleatech.pdf;Unfavorable;0.8
+vulkam.pdf;Unfavorable;0.762
+wainvame.pdf;Unfavorable;0.738
+waterhorizon.pdf;Unfavorable;0.446
+waterstuffsun.pdf;Unfavorable;0.446
+watt4ever.pdf;Out;0.718
+wattalps.pdf;Unfavorable;0.752
+wayout.pdf;Very Unfavorable;0.778
+wespran.pdf;Unfavorable;0.768
+wiidetect.pdf;Out;0.702
+windfisher.pdf;Unfavorable;0.754
+wizata.pdf;Unfavorable;0.796
+worms2.pdf;Very Unfavorable;0.718
+xeryon.pdf;Unfavorable;0.724
+yazzoom.pdf;Unfavorable;0.394
+ysenergiesmarines.pdf;Unfavorable;0.804
+zensor.pdf;Unfavorable;0.404
+zeppsolutions.pdf;Very Unfavorable;0.69
+zorabots.pdf;Very Unfavorable;0.736
+>>>>>>> 2944fc531ee39121a5daacd5e446a52ba6b3cbca
