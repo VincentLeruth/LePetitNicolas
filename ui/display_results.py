@@ -105,7 +105,7 @@ def display_prediction_results(uploaded_saved_names):
                             box-shadow:0px 1px 3px rgba(0,0,0,0.1);'>
                     <p><b>🌍 Domaine :</b> {row['Domaine']}</p>
                     <p><b>🏳️ Pays :</b> {row['Pays']}</p>
-                    <p><b>🧠 Technologie :</b> {row['Technologie']}</p>
+                    <p><b>🧠 Technologie (Harware ou Software ou Both) :</b> {row['Technologie']}</p>
                     <p><b>🎯 Résultat :</b> {row['Resultat']}</p>
                 </div>
                 """,

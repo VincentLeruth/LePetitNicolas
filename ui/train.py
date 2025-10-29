@@ -80,17 +80,10 @@ def run_training_ui():
         country_default = default_vals.get("country", COUNTRIES[0])
         result_default = default_vals.get("result", RESULTS[0])
 
-<<<<<<< HEAD
         tech = st.selectbox("🧠 Technologie (Hardware ou Software ou Both)", TECHS, index=TECHS.index(tech_default))
         domain = st.selectbox("🌍 Domaine", DOMAINS, index=DOMAINS.index(domain_default))
         country = st.selectbox("🏳️ Pays", COUNTRIES, index=COUNTRIES.index(country_default))
         result = st.selectbox("🎯 Resultat", RESULTS, index=RESULTS.index(result_default))
-=======
-        tech = st.selectbox("🧠 Technologie", TECHS, index=TECHS.index(tech_default))
-        domain = st.selectbox("🌍 Domaine", DOMAINS, index=DOMAINS.index(domain_default))
-        country = st.selectbox("🏳️ Pays", COUNTRIES, index=COUNTRIES.index(country_default))
-        result = st.selectbox("🎯 Résultat", RESULTS, index=RESULTS.index(result_default))
->>>>>>> 2944fc531ee39121a5daacd5e446a52ba6b3cbca
 
         # --- Boutons Valider / Ignorer ---
         btn_col1, btn_col2 = st.columns(2)
