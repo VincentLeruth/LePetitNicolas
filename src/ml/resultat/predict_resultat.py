@@ -24,6 +24,9 @@ import os
 import joblib
 import pandas as pd
 
+import streamlit as st
+df = pd.read_csv("data/processed/tfidf_vectors.csv")
+st.write("Colonnes présentes :", df.columns.tolist())
 
 # --- Définition des chemins de base ---
 BASE = os.path.dirname(__file__)

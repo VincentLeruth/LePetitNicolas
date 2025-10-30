@@ -30,6 +30,9 @@ import pandas as pd
 import joblib
 import numpy as np
 
+import streamlit as st
+df = pd.read_csv("data/processed/tfidf_vectors.csv")
+st.write("Colonnes présentes :", df.columns.tolist())
 
 def predict_tech():
     """

@@ -83,7 +83,7 @@ def vectorize_text():
     tfidf_df.insert(0, "doc", df["doc"])
 
     # --- Sauvegarde du CSV TF-IDF ---
-    tfidf_df.to_csv(output_file, index=False, encoding="utf-8")
+    tfidf_df.to_csv(output_file, sep=";" , index=False, encoding="utf-8")
 
 
 # --- Point d'entrée principal ---

@@ -66,7 +66,7 @@ def save_uploaded_files(uploaded_files, decks_dir, translated_dir):
         for file in uploaded_files:
             original_name = file.name
             rename_key = f"rename_{original_name}"
-            final_name = str(st.session_state.get(rename_key, original_name))
+            final_name = st.session_state.get(rename_key, original_name)
 
             # --- Sauvegarde du fichier PDF ---
             save_path = os.path.join(decks_dir, final_name)
