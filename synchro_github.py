@@ -4,7 +4,7 @@ import os
 import time
 from urllib.parse import quote
 
-def sync_repo(repo_path, push=False, pull=False):
+def sync_repo(repo_path, push=False):
     """
     Synchronise le repo GitHub : pull et/ou push selon les paramètres.
     Authentification HTTPS via token GitHub et username.
@@ -25,7 +25,7 @@ def sync_repo(repo_path, push=False, pull=False):
         st.warning("⚠️ Aucun token ou username GitHub trouvé dans les variables d'environnement.")
         return
 
-
+    branch = repo.active_branch.name
     with st.spinner("🔄 Synchronisation en cours avec GitHub..."):
         try:
             repo = git.Repo(repo_path)
@@ -43,14 +43,14 @@ def sync_repo(repo_path, push=False, pull=False):
                 origin.set_url(url_with_token)
 
             # Pull si demandé
-            if pull:
-                origin.pull(refspec='main:main')
+            if push == False:
+                origin.pull(refspec=f'{branch}:{branch}')
 
             # Push si demandé
             if push:
                 repo.git.add(all=True)
                 repo.index.commit("📤 Upload automatique depuis Streamlit")
-                origin.push(refspec='main:main')
+                origin.push(refspec=f'{branch}:{branch}')
 
             # Rétablir l'URL originale
             origin.set_url(original_url)
