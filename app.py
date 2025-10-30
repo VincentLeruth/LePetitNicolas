@@ -16,6 +16,7 @@ from synchro_github import sync_repo
 BASE_DIR = os.path.dirname(__file__)
 DECKS_DIR = os.path.join(BASE_DIR, "data", "decks")
 TRANSLATED_DIR = os.path.join(BASE_DIR, "data", "processed", "translated")
+REPO_DIR = os.path.join(BASE_DIR, "streamlit")
 
 # --- Configuration page ---
 st.set_page_config(page_title="Le petit Nicolas", 
@@ -44,7 +45,7 @@ def go_to(page_name):
     if page_name == "menu":
         st.session_state.clear()
         st.session_state.page = "menu"
-        sync_repo(BASE_DIR, push=False)
+        sync_repo(REPO_DIR, push=False)
     else:
         st.session_state.page = page_name
     st.rerun()
@@ -68,7 +69,7 @@ elif st.session_state.page == "train":
 
     run_training_ui()
 
-    sync_repo(BASE_DIR, push=True)
+    sync_repo(REPO_DIR, push=True)
 
     # --- Bouton retour au menu ---
     st.markdown("---")
@@ -100,7 +101,7 @@ elif st.session_state.page == "analyze":
         if saved_files_names:
             display_prediction_results(saved_files_names)
 
-            sync_repo(BASE_DIR, push=True)
+            sync_repo(REPO_DIR, push=True)
 
     # --- Sélection d'un deck via sidebar pour affichage spécifique ---
     deck_files = [f for f in os.listdir(DECKS_DIR) if f.lower().endswith(".pdf")]

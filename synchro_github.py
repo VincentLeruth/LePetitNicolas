@@ -7,7 +7,7 @@ from urllib.parse import quote
 GITHUB_USER = "Nic0o00"
 GITHUB_REPO = "streamlit"
 
-def sync_repo(repo_path, push=False, pull=False):
+def sync_repo(repo_path, push=False):
     """
     Synchronise le repo GitHub via la ligne de commande Git.
     Authentification HTTPS via token GitHub et username.
@@ -36,14 +36,14 @@ def sync_repo(repo_path, push=False, pull=False):
             subprocess.run(["git", "-C", repo_path, "config", "user.email", "bot@localhost"], check=True)
             
             # Pull si demandé
-            if pull:
+            if push == False:
                 subprocess.run(
                     ["git", "-C", repo_path, "pull", url_cmd, branch],
                     check=True
                 )
             
             # Push si demandé
-            if push:
+            if push == True:
                 # Ajouter tous les fichiers
                 subprocess.run(["git", "-C", repo_path, "add", "."], check=True)
                 
