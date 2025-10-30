@@ -10,6 +10,8 @@ from ui.vecto_predict import run_vectorize_and_predict_ui
 from ui.display_results import display_prediction_results
 from ui.train import run_training_ui
 
+from synchro_github import sync_repo
+
 # --- Chemins ---
 BASE_DIR = os.path.dirname(__file__)
 DECKS_DIR = os.path.join(BASE_DIR, "data", "decks")
@@ -42,6 +44,7 @@ def go_to(page_name):
     if page_name == "menu":
         st.session_state.clear()
         st.session_state.page = "menu"
+        sync_repo(BASE_DIR, push=False)
     else:
         st.session_state.page = page_name
     st.rerun()
@@ -64,6 +67,8 @@ elif st.session_state.page == "train":
     st.write("👉 Ici tu peux labelliser les decks non traités et lancer l'entraînement des modèles.")
 
     run_training_ui()
+
+    sync_repo(BASE_DIR, push=True)
 
     # --- Bouton retour au menu ---
     st.markdown("---")
@@ -94,6 +99,8 @@ elif st.session_state.page == "analyze":
         saved_files_names = st.session_state.get("uploaded_files_saved_names", [])
         if saved_files_names:
             display_prediction_results(saved_files_names)
+
+            sync_repo(BASE_DIR, push=True)
 
     # --- Sélection d'un deck via sidebar pour affichage spécifique ---
     deck_files = [f for f in os.listdir(DECKS_DIR) if f.lower().endswith(".pdf")]
