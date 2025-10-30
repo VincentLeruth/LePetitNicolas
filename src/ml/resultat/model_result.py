@@ -1,82 +1,102 @@
 """
-Module : predict_resultat
-=========================
+Script d'entraînement d'un modèle Random Forest pour classifier les documents selon leur résultat.
 
-Ce module effectue la prédiction du résultat (label final) d’un document
-à partir des vecteurs TF-IDF et d’un modèle de classification entraîné
-(prévision type "success/failure" ou autre label final).
+Entrées :
+    - data/processed/tfidf_vectors.csv : vecteurs TF-IDF avec identifiant 'doc'
+    - data/labeled.csv : fichier contenant les labels ('result') associés aux documents
 
-Fonctionnalités principales :
------------------------------
-- Chargement du modèle de classification (`lr_result_model.joblib`)
-- Chargement des vecteurs TF-IDF depuis `data/processed/tfidf_vectors.csv`
-- Vérification des features manquantes et remplissage avec 0
-- Prédiction du label final pour chaque document
-- Export du CSV contenant `doc`, `predicted_result`, et `confidence_score`
-
-Fichier de sortie :
--------------------
-- `output/predictions/tfidf_vectors_with_result_predictions.csv`
+Sortie :
+    - models/deck_classifier_rf.joblib : modèle RandomForest entraîné
 """
 
 import os
-import pandas as pd
 import joblib
-import numpy as np
+import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report
+
+# --- Définition des chemins de base ---
+BASE = os.path.dirname(__file__)
+VECT_CSV = os.path.join(BASE, "..", "..", "..", "data", "processed", "tfidf_vectors.csv")
+LABELED_CSV = os.path.join(BASE, "..", "..", "..", "data", "labeled.csv")
+MODEL_PATH = os.path.join(BASE, "..", "..", "..", "models", "deck_classifier_rf.joblib")
 
 
-def predict_resultat():
-    """Effectue les prédictions du résultat pour chaque document."""
+def train_result():
+    """
+    Fonction principale d'entraînement du modèle RandomForestClassifier.
+    """
 
-    # --- Définition des chemins ---
-    base_dir = os.path.dirname(__file__)
-    model_path = os.path.join(base_dir, "..", "..", "..", "models", "lr_result_model.joblib")
-    vectors_path = os.path.join(base_dir, "..", "..", "..", "data", "processed", "tfidf_vectors.csv")
+    # --- Charger vecteurs et labels ---
+    print("📥 Chargement des données...")
+    X = pd.read_csv(VECT_CSV, sep=";", encoding="utf-8")
+    df_labels = pd.read_csv(LABELED_CSV, sep=";", encoding="utf-8")
 
-    output_dir = os.path.join(base_dir, "..", "..", "..", "output", "predictions")
-    os.makedirs(output_dir, exist_ok=True)
-    output_file = os.path.join(output_dir, "tfidf_vectors_with_result_predictions.csv")
+    # --- Nettoyage des colonnes critiques ---
+    for df in [X, df_labels]:
+        df["doc"] = df["doc"].astype(str).str.strip().str.lower()
 
-    # --- Chargement du modèle entraîné ---
-    clf = joblib.load(model_path)
+    df_labels["resultat"] = df_labels["resultat"].astype(str).str.strip()
 
-    # --- Chargement des vecteurs TF-IDF ---
-    df_vectors = pd.read_csv(vectors_path, sep=";")
+    # --- Filtrage des labels autorisés ---
+    allowed_labels = ["Interesting", "Unfavorable", "Very Unfavorable", "Out"]
+    df_labels = df_labels[df_labels["resultat"].isin(allowed_labels)]
+    
 
-    # --- Vérifie la présence de la colonne 'doc' ---
-    if "doc" not in df_vectors.columns:
-        df_vectors["doc"] = df_vectors.index.astype(str)
+    # --- Diagnostic sur les correspondances de documents ---
+    docs_X = set(X["doc"])
+    docs_labels = set(df_labels["doc"])
 
-    # --- Vérification des features manquantes ---
-    feature_names = clf.feature_names_in_
-    missing_feats = [feat for feat in feature_names if feat not in df_vectors.columns]
+    missing_in_labels = docs_X - docs_labels
+    missing_in_vectors = docs_labels - docs_X
 
-    if missing_feats:
-        zeros_df = pd.DataFrame(0, index=df_vectors.index, columns=missing_feats)
-        df_vectors = pd.concat([df_vectors, zeros_df], axis=1)
+    print(f"\n📊 Diagnostic correspondances :")
+    print(f" - {len(missing_in_labels)} documents TF-IDF sans label")
+    print(f" - {len(missing_in_vectors)} labels sans vecteurs TF-IDF\n")
 
-    # --- Sélection des colonnes pour la prédiction ---
-    X = df_vectors[feature_names]
+    # --- Fusion pour aligner vecteurs et labels ---
+    df_merged = pd.merge(
+        X,
+        df_labels[["doc", "resultat"]],
+        on="doc",
+        how="inner"  # conserver uniquement les docs communs
+    )
+    print(df_merged.columns)
+    
 
-    # --- Prédiction des labels ---
-    preds = clf.predict(X)
-    if hasattr(clf, "predict_proba"):
-        confidence = clf.predict_proba(X).max(axis=1)
-    else:
-        confidence = np.ones(len(X))
+    if df_merged.empty:
+        raise ValueError("❌ Aucun document commun entre tfidf_vectors.csv et labeled.csv.")
 
-    # --- Construction du DataFrame final ---
-    df_results = pd.DataFrame({
-        "doc": df_vectors["doc"],
-        "predicted_result": preds,
-        "confidence_score": confidence
-    })
+    print(f"✅ Fusion réussie : {len(df_merged)} documents alignés.")
+    print(f"Colonnes disponibles après merge : {df_merged.columns.tolist()}")
 
-    # --- Sauvegarde ---
-    df_results.to_csv(output_file, index=False, sep=";")
-    print(f"✅ Prédictions 'resultat' sauvegardées dans : {output_file}")
+    # --- Préparation des données d'entraînement ---
+    X_train_vectors = df_merged.drop(columns=["doc", "resultat"])
+    y_train_labels = df_merged["resultat"]
+
+    print(f"\n📦 Données prêtes : X shape = {X_train_vectors.shape}, y length = {len(y_train_labels)}")
+
+    # --- Entraînement du modèle RandomForest ---
+    print("\n🚀 Entraînement du modèle Random Forest...")
+    clf = RandomForestClassifier(
+        n_estimators=500,
+        class_weight="balanced",
+        random_state=42,
+        n_jobs=-1
+    )
+    clf.fit(X_train_vectors, y_train_labels)
+
+    # --- Évaluation sur les données d'entraînement ---
+    print("\n=== Évaluation sur les données d'entraînement ===")
+    y_pred = clf.predict(X_train_vectors)
+    print(classification_report(y_train_labels, y_pred))
+
+    # --- Sauvegarde du modèle ---
+    os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
+    joblib.dump(clf, MODEL_PATH)
+    print(f"\n💾 Modèle sauvegardé dans : {MODEL_PATH}")
 
 
-# --- Point d’entrée principal ---
+# --- Point d’entrée du script ---
 if __name__ == "__main__":
-    predict_resultat()
+    train_result()

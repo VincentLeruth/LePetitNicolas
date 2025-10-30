@@ -59,7 +59,7 @@ def display_prediction_results(uploaded_saved_names):
         "domain": os.path.join(processed_dir, "tfidf_vectors_with_domain_predictions.csv"),
         "country": os.path.join(processed_dir, "tfidf_vectors_with_country_predictions.csv"),
         "tech": os.path.join(processed_dir, "tfidf_vectors_with_tech_predictions.csv"),
-        "result": os.path.join(processed_dir, "tfidf_vectors_with_resultat_predictions.csv"),
+        "resultat": os.path.join(processed_dir, "tfidf_vectors_with_resultat_predictions.csv"),
     }
 
     # --- Chargement des fichiers dans des DataFrames pandas ---
@@ -70,7 +70,7 @@ def display_prediction_results(uploaded_saved_names):
     merged = dfs["domain"][["doc", "predicted_domain"]].copy()
     merged = merged.merge(dfs["country"][["doc", "predicted_country"]], on="doc", how="left")
     merged = merged.merge(dfs["tech"][["doc", "predicted_tech"]], on="doc", how="left")
-    merged = merged.merge(dfs["result"][["doc", "predicted_resultat"]], on="doc", how="left")
+    merged = merged.merge(dfs["resultat"][["doc", "predicted_resultat"]], on="doc", how="left")
 
     # --- Renommage des colonnes pour affichage lisible ---
     merged.rename(columns={
