@@ -64,6 +64,7 @@ def display_prediction_results(uploaded_saved_names):
 
     # --- Chargement des fichiers dans des DataFrames pandas ---
     dfs = {key: pd.read_csv(path, sep=";") for key, path in files_needed.items()}
+    
 
     # --- Fusion des résultats pour chaque fichier ---
     merged = dfs["domain"][["doc", "predicted_domain"]].copy()
