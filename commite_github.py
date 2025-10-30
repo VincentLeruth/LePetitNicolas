@@ -1,6 +1,7 @@
 from github import Github, GithubException
 import os
 import streamlit as st
+import subprocess
 
 # --- Connexion à GitHub via token stocké dans Streamlit Secrets ---
 GITHUB_TOKEN = st.secrets["GITHUB_TOKEN"]
@@ -13,9 +14,7 @@ repo = g.get_repo(f"{st.secrets['GITHUB_USER']}/{st.secrets['GITHUB_REPO']}")
 
 
 def commit_file_to_github(local_path, repo_path, commit_message):
-    import os
-    import streamlit as st
-    from github import Github, GithubException
+    
 
     # Vérifie que le fichier existe localement
     if not os.path.exists(local_path):
@@ -38,4 +37,27 @@ def commit_file_to_github(local_path, repo_path, commit_message):
             st.info(f"✅ Création sur GitHub : {repo_path}")
         else:
             st.error(f"❌ Erreur GitHub : {e}")
+
+import subprocess
+
+
+def git_pull():
+    REPO_PATH = os.path.dirname(__file__)
+    """
+    Effectue un 'git pull' sur le dépôt local.
+
+    Parameters
+    ----------
+    repo_path : str
+        Chemin du dépôt Git local.
+    """
+    result = subprocess.run(
+        ["git", "pull", "origin", "main"],
+        cwd=REPO_PATH,
+        capture_output=True,
+        text=True,
+        check=True
+    )
+    print(result.stdout)
+    return True, result.stdout
 
