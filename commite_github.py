@@ -43,21 +43,17 @@ import subprocess
 
 def git_pull():
     REPO_PATH = os.path.dirname(__file__)
-    """
-    Effectue un 'git pull' sur le dépôt local.
+    try:
+        result = subprocess.run(
+            ["git", "pull", "origin", "main"],
+            cwd=REPO_PATH,
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        return True, result.stdout
+    except subprocess.CalledProcessError as e:
+        print("Git pull failed:", e.stderr)
+        return False, e.stderr
 
-    Parameters
-    ----------
-    repo_path : str
-        Chemin du dépôt Git local.
-    """
-    result = subprocess.run(
-        ["git", "pull", "origin", "main"],
-        cwd=REPO_PATH,
-        capture_output=True,
-        text=True,
-        check=True
-    )
-    print(result.stdout)
-    return True, result.stdout
 

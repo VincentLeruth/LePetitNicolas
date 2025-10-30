@@ -73,26 +73,30 @@ def save_uploaded_files(uploaded_files, decks_dir, translated_dir):
 
             # --- Extraction et traduction du texte, puis sauvegarde en TXT ---
             txt_path = os.path.join(translated_dir, os.path.splitext(final_name)[0] + ".txt")
+            file.seek(0) # Revenir au début du fichier PDF
             uploaded_text = translate_text(extract_text_from_pdf(file))
             with open(txt_path, "w", encoding="utf-8") as f:
                 f.write(uploaded_text)
         
+
+            # --- Ajout du nom du fichier sauvegardé à la liste ---
+            saved_files_names.append(final_name)
+
+
             commit_file_to_github(
-                local_file_path=f"src/data/decks/{final_name}",
+                local_path=save_path,
                 repo_path=f"src/data/decks/{final_name}",
                 commit_message=f"Ajout du deck {final_name} (PDF)"
             )
             print(f"🚀 {final_name} (PDF) commité sur GitHub avec succès !")
 
             commit_file_to_github(
-                local_file_path=f"src/data/processed/translated/{os.path.splitext(final_name)[0]}.txt",
-                repo_path=f"src/data/processed/translated/{os.path.splitext(final_name)[0]}.txt",
+                local_path=txt_path,
+                repo_path=f"src/data/processed/translated/{os.path.basename(txt_path)}",
                 commit_message=f"Ajout du texte traduit pour {final_name}"
             )
             print(f"🚀 {os.path.basename(txt_path)} (TXT) commité sur GitHub avec succès !")
             
-            # --- Ajout du nom du fichier sauvegardé à la liste ---
-            saved_files_names.append(final_name)
 
         # --- Mise à jour de st.session_state après sauvegarde ---
         st.session_state.saved_uploaded_files = True
