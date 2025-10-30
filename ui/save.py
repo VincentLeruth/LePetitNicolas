@@ -88,14 +88,14 @@ def save_uploaded_files(uploaded_files, decks_dir, translated_dir):
 
             commit_file_to_github(
                 local_path=save_path,
-                repo_path=f"src/data/decks/{final_name}",
+                repo_path=f"data/decks/{final_name}",
                 commit_message=f"Ajout du deck {final_name} (PDF)"
             )
             print(f"🚀 {final_name} (PDF) commité sur GitHub avec succès !")
 
             commit_file_to_github(
                 local_path=txt_path,
-                repo_path=f"src/data/processed/translated/{os.path.basename(txt_path)}",
+                repo_path=f"data/processed/translated/{os.path.basename(txt_path)}",
                 commit_message=f"Ajout du texte traduit pour {final_name}"
             )
             print(f"🚀 {os.path.basename(txt_path)} (TXT) commité sur GitHub avec succès !")
