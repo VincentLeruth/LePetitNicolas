@@ -42,11 +42,6 @@ def go_to(page_name):
         Nom de la page à afficher ("menu", "train", "analyze").
     """
     if page_name == "menu":
-        success, message = git_pull()
-        if success:
-            st.success("✅ Dépôt mis à jour depuis GitHub !")
-        else:
-            st.error(f"❌ Erreur lors du git pull : {message}")
         st.session_state.clear()
         st.session_state.page = "menu"
     else:
