@@ -77,16 +77,19 @@ def save_uploaded_files(uploaded_files, decks_dir, translated_dir):
             with open(txt_path, "w", encoding="utf-8") as f:
                 f.write(uploaded_text)
 
+            repo_rel_path_pdf = os.path.relpath(save_path, start=os.getcwd())
+            repo_rel_path_txt = os.path.relpath(txt_path, start=os.getcwd())
+
             commit_file_to_github(
                 local_file_path=save_path,
-                repo_path=save_path,
+                repo_path=repo_rel_path_pdf,
                 commit_message=f"Ajout du deck {final_name} (PDF)"
             )
             print(f"🚀 {final_name} (PDF) commité sur GitHub avec succès !")
 
             commit_file_to_github(
                 local_file_path=txt_path,
-                repo_path=txt_path,
+                repo_path=repo_rel_path_txt,
                 commit_message=f"Ajout du texte traduit pour {final_name}"
             )
             print(f"🚀 {os.path.basename(txt_path)} (TXT) commité sur GitHub avec succès !")

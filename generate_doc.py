@@ -7,7 +7,6 @@ import os
 import subprocess
 
 
-
 # Répertoire racine du projet (dossier où se trouve ce script)
 root_dir = os.path.dirname(os.path.abspath(__file__))
 
