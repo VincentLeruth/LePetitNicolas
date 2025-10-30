@@ -44,13 +44,13 @@ def sync_repo(repo_path, push=False, pull=False):
 
             # Pull si demandé
             if pull:
-                origin.pull()
+                origin.pull(refspec='main:main')
 
             # Push si demandé
             if push:
                 repo.git.add(all=True)
                 repo.index.commit("📤 Upload automatique depuis Streamlit")
-                origin.push()
+                origin.push(refspec='main:main')
 
             # Rétablir l'URL originale
             origin.set_url(original_url)
