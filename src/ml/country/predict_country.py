@@ -20,8 +20,6 @@ import pandas as pd
 import joblib
 import numpy as np
 
-from commite_github import commit_file_to_github
-
 
 def predict_country():
     """
@@ -112,12 +110,6 @@ def predict_country():
 
     # --- Sauvegarde des résultats github ---
     df_results.to_csv(output_file, sep=";", index=False, encoding="utf-8")
-    commit_file_to_github(
-        local_file_path=output_file,  
-        repo_path=f"output/predictions/tfidf_vectors_with_country_predictions.csv",        
-        commit_message="Update country prediction results"
-    )
-    print("🚀 Résultats pays committés sur GitHub avec succès !")
 
 
 # --- Point d’entrée principal ---

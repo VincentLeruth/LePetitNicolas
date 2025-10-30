@@ -24,7 +24,6 @@ import os
 import joblib
 import pandas as pd
 
-from commite_github import commit_file_to_github
 
 # --- Définition des chemins de base ---
 BASE = os.path.dirname(__file__)
@@ -69,12 +68,7 @@ def predict_resultat():
 
     # --- Sauvegarder les résultats ---
     os.makedirs(os.path.dirname(OUTPUT_CSV), exist_ok=True)
-    commit_file_to_github(
-        local_file_path=OUTPUT_CSV,
-        repo_path=OUTPUT_CSV,
-        commit_message="Update resultat prediction results"
-    )
-    print("🚀 Résultats résultat committés sur GitHub avec succès !")
+    
 
 # --- Point d’entrée du script ---
 if __name__ == "__main__":

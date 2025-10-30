@@ -31,7 +31,6 @@ import pandas as pd
 import joblib
 import numpy as np
 
-from commite_github import commit_file_to_github
 
 def predict_tech():
     """
@@ -130,13 +129,6 @@ def predict_tech():
         "confidence_score": global_confidence
     })
 
-    # --- Sauvegarde des résultats ---
-    commit_file_to_github(
-        local_file_path=output_file,
-        repo_path=output_file,
-        commit_message="Update tech prediction results"
-    )
-    print("🚀 Résultats technologie committés sur GitHub avec succès !")
 
 
 # --- Point d’entrée principal ---

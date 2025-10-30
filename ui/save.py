@@ -3,7 +3,6 @@ import streamlit as st
 from src.treatment.extract_text import extract_text_from_pdf
 from src.treatment.translate import translate_text
 
-from commite_github import commit_file_to_github
 """
 Module de sauvegarde des fichiers PDF uploadés et génération des fichiers TXT traduits.
 
@@ -84,22 +83,6 @@ def save_uploaded_files(uploaded_files, decks_dir, translated_dir):
 
             # --- Ajout du nom du fichier sauvegardé à la liste ---
             saved_files_names.append(final_name)
-
-
-            commit_file_to_github(
-                local_path=save_path,
-                repo_path=f"data/decks/{final_name}",
-                commit_message=f"Ajout du deck {final_name} (PDF)"
-            )
-            print(f"🚀 {final_name} (PDF) commité sur GitHub avec succès !")
-
-            commit_file_to_github(
-                local_path=txt_path,
-                repo_path=f"data/processed/translated/{os.path.basename(txt_path)}",
-                commit_message=f"Ajout du texte traduit pour {final_name}"
-            )
-            print(f"🚀 {os.path.basename(txt_path)} (TXT) commité sur GitHub avec succès !")
-            
 
         # --- Mise à jour de st.session_state après sauvegarde ---
         st.session_state.saved_uploaded_files = True

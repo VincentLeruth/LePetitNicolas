@@ -41,7 +41,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.metrics import classification_report
-from commite_github import commit_file_to_github
 
 
 def train_tech():
@@ -144,13 +143,6 @@ def train_tech():
     model_path = os.path.join(models_dir, "lr_multilabel_techno_model.joblib")
     joblib.dump(clf, model_path)
 
-    # --- Commit sur GitHub ---
-    commit_file_to_github(
-        local_path=model_path,
-        repo_path="models/lr_multilabel_techno_model.joblib", 
-        commit_message=f"Update {os.path.basename(model_path)}"
-    )
-    print(f"🚀 Modèle {os.path.basename(model_path)} commité sur GitHub avec succès !")
 
 
 # --- Exécution directe ---

@@ -23,7 +23,6 @@ from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import StratifiedKFold, cross_val_predict
 from sklearn.metrics import classification_report
-from commite_github import commit_file_to_github
 
 
 def train_country():
@@ -122,13 +121,9 @@ def train_country():
     os.path.join(models_dir, "country_gb_model.joblib"),
     os.path.join(models_dir, "country_label_encoder.joblib")
     ]
-    for file_path in files_to_commit:
-        commit_file_to_github(
-            local_file_path=file_path,
-            repo_path=file_path,  # conserve le même chemin dans le repo
-            commit_message=f"Update {os.path.basename(file_path)}"
-        )
-        print(f"🚀 {os.path.basename(file_path)} commité sur GitHub avec succès !")
+
+    joblib.dump(model, files_to_commit[0])
+    joblib.dump(le, files_to_commit[1])
 
    
 

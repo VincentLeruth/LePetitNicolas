@@ -10,8 +10,6 @@ from ui.vecto_predict import run_vectorize_and_predict_ui
 from ui.display_results import display_prediction_results
 from ui.train import run_training_ui
 
-from commite_github import git_pull
-
 # --- Chemins ---
 BASE_DIR = os.path.dirname(__file__)
 DECKS_DIR = os.path.join(BASE_DIR, "data", "decks")

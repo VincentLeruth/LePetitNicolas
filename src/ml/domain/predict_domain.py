@@ -22,7 +22,6 @@ import numpy as np
 import pandas as pd
 from scipy.sparse import csr_matrix
 from sklearn.metrics.pairwise import cosine_similarity
-from commite_github import commit_file_to_github
 
 # --- Chemins de base ---
 BASE = os.path.dirname(__file__)
@@ -110,12 +109,6 @@ def predict_domain():
 
     # --- Sauvegarde des résultats ---
     out.to_csv(OUT_FILE, sep=";", index=False, encoding="utf-8")
-    commit_file_to_github(
-        local_file_path=OUT_FILE,  
-        repo_path=OUT_FILE,       
-        commit_message="Update domain prediction results"
-    )
-    print("🚀 Résultats domaine committés sur GitHub avec succès !")
 
 
 if __name__ == "__main__":

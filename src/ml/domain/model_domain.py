@@ -42,7 +42,6 @@ from sklearn.decomposition import TruncatedSVD
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics.pairwise import cosine_similarity
-from commite_github import commit_file_to_github
 
 # --- Définition des chemins de base ---
 BASE = os.path.dirname(__file__)
@@ -193,13 +192,6 @@ def train_domain():
     joblib.dump(le, files_to_commit[5])
     joblib.dump(nonzero_cols, files_to_commit[6])
 
-    for file_path in files_to_commit:
-        commit_file_to_github(
-            local_file_path=file_path,
-            repo_path=file_path,  # conserve le même chemin dans le repo GitHub
-            commit_message=f"Update {os.path.basename(file_path)}"
-        )
-        print(f"🚀 {os.path.basename(file_path)} commité sur GitHub avec succès !")
 
 
 # --- Point d’entrée principal ---
