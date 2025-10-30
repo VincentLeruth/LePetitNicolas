@@ -21,6 +21,7 @@ Fonctionnalités :
 
 BASE_DIR = os.path.dirname(__file__)
 VECT_PATH = os.path.join(BASE_DIR, "..", "data", "processed", "tfidf_vectors.csv")
+PRED_DIR = os.path.join(BASE_DIR, "..", "output", "predictions")
 
 def run_vectorize_and_predict_ui():
     """
@@ -83,7 +84,7 @@ def run_vectorize_and_predict_ui():
         if st.button("🤖 Lancer les prédictions sur tous les modèles"):
             with st.spinner("Prédictions en cours..."):
                 try:
-                    PRED_DIR = os.path.join(BASE_DIR, "..", "output", "predictions")
+                   
                     os.makedirs(PRED_DIR, exist_ok=True)
 
                     predict_domain()

@@ -23,6 +23,8 @@ import streamlit as st
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+from commite_github import commit_file_to_github
+
 
 def vectorize_text():
     """
@@ -84,8 +86,12 @@ def vectorize_text():
     tfidf_df.insert(0, "doc", df["doc"])
 
     # --- Sauvegarde du CSV TF-IDF ---
-    tfidf_df.to_csv(output_file, sep=";", index=False)
-    st.success(f"Vecteurs TF-IDF enrichis sauvegardés")
+    commit_file_to_github(
+        local_file_path=output_file,
+        repo_path=output_file,  # conserve le même chemin dans le repo
+        commit_message=f"Update TF-IDF vectors file: {os.path.basename(output_file)}"
+    )
+    st.info("🚀 Fichier TF-IDF commité sur GitHub avec succès !")
 
 
 # --- Point d'entrée principal ---

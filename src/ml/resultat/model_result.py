@@ -24,6 +24,7 @@ import joblib
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
+from commite_github import commit_file_to_github
 
 # --- Définition des chemins de base ---
 BASE = os.path.dirname(__file__)
@@ -83,8 +84,12 @@ def train_result():
     print(classification_report(y_train_labels, y_pred))
 
     # --- Sauvegarde du modèle entraîné ---
-    joblib.dump(clf, MODEL_PATH)
-    print(f"Modèle RandomForest sauvegardé dans {MODEL_PATH}")
+    commit_file_to_github(
+        local_file_path=MODEL_PATH,
+        repo_path=MODEL_PATH,  # même chemin dans le repo GitHub
+        commit_message=f"Update {os.path.basename(MODEL_PATH)}"
+    )
+    print(f"🚀 Modèle {os.path.basename(MODEL_PATH)} commité sur GitHub avec succès !")
 
 # --- Point d’entrée du script ---
 if __name__ == "__main__":

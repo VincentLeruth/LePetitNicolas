@@ -9,6 +9,8 @@ from src.ml.resultat.model_result import train_result
 
 from streamlit_pdf_viewer import pdf_viewer  
 
+from commite_github import commit_file_to_github
+
 # --- Chemins ---
 BASE_DIR = os.path.dirname(__file__)
 DECKS_DIR = os.path.join(BASE_DIR, "..", "data", "decks")
@@ -105,6 +107,12 @@ def run_training_ui():
                 labeled_df = pd.concat([labeled_df, new_row], ignore_index=True)
                 labeled_df.to_csv(LABELED_CSV, sep=";", index=False)
                 st.success(f"✅ {current_deck} ajouté à labeled.csv")
+                commit_file_to_github(
+                    local_file_path=LABELED_CSV,
+                    repo_path=LABELED_CSV,  # conserve le même chemin dans le repo GitHub
+                    commit_message=f"Update labeled.csv - ajout de {current_deck}"
+                )
+                st.info("🚀 Fichier labeled.csv commité sur GitHub avec succès !")
                 st.session_state.remaining_decks.pop(0)
                 st.rerun()
 

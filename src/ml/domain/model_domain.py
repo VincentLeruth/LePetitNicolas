@@ -42,6 +42,7 @@ from sklearn.decomposition import TruncatedSVD
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics.pairwise import cosine_similarity
+from commite_github import commit_file_to_github
 
 # --- Définition des chemins de base ---
 BASE = os.path.dirname(__file__)
@@ -174,15 +175,23 @@ def train_domain():
     clf.fit(X_final, y)
 
     # --- Sauvegarde de tous les objets nécessaires à la prédiction ---
-    joblib.dump(selector, os.path.join(MODELS_DIR, "domain_selector.joblib"))
-    joblib.dump(svd, os.path.join(MODELS_DIR, "domain_svd.joblib"))
-    joblib.dump(scaler, os.path.join(MODELS_DIR, "domain_scaler.joblib"))
-    joblib.dump(centroids, os.path.join(MODELS_DIR, "domain_centroids.joblib"))
-    joblib.dump(clf, os.path.join(MODELS_DIR, "domain_clf.joblib"))
-    joblib.dump(le, os.path.join(MODELS_DIR, "domain_label_encoder.joblib"))
-    joblib.dump(nonzero_cols, os.path.join(MODELS_DIR, "domain_nonzero_columns.joblib"))
-
-    print("Training complete. Models saved in", MODELS_DIR)
+    files_to_commit = [
+    os.path.join(MODELS_DIR, "domain_selector.joblib"),
+    os.path.join(MODELS_DIR, "domain_svd.joblib"),
+    os.path.join(MODELS_DIR, "domain_scaler.joblib"),
+    os.path.join(MODELS_DIR, "domain_centroids.joblib"),
+    os.path.join(MODELS_DIR, "domain_clf.joblib"),
+    os.path.join(MODELS_DIR, "domain_label_encoder.joblib"),
+    os.path.join(MODELS_DIR, "domain_nonzero_columns.joblib")
+    ]
+    
+    for file_path in files_to_commit:
+        commit_file_to_github(
+            local_file_path=file_path,
+            repo_path=file_path,  # conserve le même chemin dans le repo GitHub
+            commit_message=f"Update {os.path.basename(file_path)}"
+        )
+        print(f"🚀 {os.path.basename(file_path)} commité sur GitHub avec succès !")
 
 
 # --- Point d’entrée principal ---

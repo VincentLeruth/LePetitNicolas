@@ -20,6 +20,8 @@ import pandas as pd
 import joblib
 import numpy as np
 
+from commite_github import commit_file_to_github
+
 
 def predict_country():
     """
@@ -108,9 +110,13 @@ def predict_country():
     for idx, class_name in enumerate(le.classes_):
         df_results[f"proba_{class_name}"] = proba_all[:, idx]
 
-    # --- Sauvegarde des résultats dans un fichier CSV ---
-    df_results.to_csv(output_file, sep=";", index=False)
-    print(f"Prédictions pays sauvegardées dans : {output_file}")
+    # --- Sauvegarde des résultats github ---
+    commit_file_to_github(
+        local_file_path=output_file,  
+        repo_path=output_file,        
+        commit_message="Update country prediction results"
+    )
+    print("🚀 Résultats pays committés sur GitHub avec succès !")
 
 
 # --- Point d’entrée principal ---
