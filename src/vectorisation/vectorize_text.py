@@ -86,6 +86,7 @@ def vectorize_text():
     tfidf_df.insert(0, "doc", df["doc"])
 
     # --- Sauvegarde du CSV TF-IDF ---
+    tfidf_df.to_csv(output_file, index=False, encoding="utf-8")
     commit_file_to_github(
         local_file_path=output_file,
         repo_path=f"data/processed/tfidf_vectors.csv",  
