@@ -21,7 +21,6 @@ Fichier de sortie :
 -------------------
 - `output/predictions/tfidf_vectors_with_tech_predictions.csv`
 
-Auteur :
 --------
 Fait partie du pipeline de prédiction documentaire multi-label.
 """
