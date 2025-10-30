@@ -4,9 +4,9 @@ import os
 import time
 from urllib.parse import quote
 
-def sync_repo(repo_path, push=False):
+def sync_repo(repo_path, push=False, pull=False):
     """
-    Synchronise le repo GitHub : pull automatique, push optionnel.
+    Synchronise le repo GitHub : pull et/ou push selon les paramètres.
     Authentification HTTPS via token GitHub et username.
     Affiche un message 'Synchronisation en cours...' dans Streamlit.
 
@@ -16,12 +16,15 @@ def sync_repo(repo_path, push=False):
         Chemin local vers le repo cloné.
     push : bool
         Si True, fait un push des modifications vers GitHub.
+    pull : bool
+        Si True, fait un pull depuis GitHub.
     """
     token = os.environ.get("GITHUB_TOKEN")
-    username = os.environ.get("GITHUB_USER")  # ton username GitHub
+    username = os.environ.get("GITHUB_USER")
     if not token or not username:
         st.warning("⚠️ Aucun token ou username GitHub trouvé dans les variables d'environnement.")
         return
+
 
     with st.spinner("🔄 Synchronisation en cours avec GitHub..."):
         try:
@@ -39,8 +42,9 @@ def sync_repo(repo_path, push=False):
                 )
                 origin.set_url(url_with_token)
 
-            # Pull
-            origin.pull()
+            # Pull si demandé
+            if pull:
+                origin.pull()
 
             # Push si demandé
             if push:
