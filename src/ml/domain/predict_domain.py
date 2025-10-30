@@ -23,9 +23,6 @@ import pandas as pd
 from scipy.sparse import csr_matrix
 from sklearn.metrics.pairwise import cosine_similarity
 
-import streamlit as st
-df = pd.read_csv("data/processed/tfidf_vectors.csv")
-st.write("Colonnes présentes :", df.columns.tolist())
 
 # --- Chemins de base ---
 BASE = os.path.dirname(__file__)

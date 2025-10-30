@@ -20,10 +20,6 @@ import pandas as pd
 import joblib
 import numpy as np
 
-import streamlit as st
-df = pd.read_csv("data/processed/tfidf_vectors.csv")
-st.write("Colonnes présentes :", df.columns.tolist())
-
 def predict_country():
     """
     Prédit le pays d’origine de chaque document à partir de ses vecteurs TF-IDF.

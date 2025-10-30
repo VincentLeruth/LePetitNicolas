@@ -30,9 +30,6 @@ import pandas as pd
 import joblib
 import numpy as np
 
-import streamlit as st
-df = pd.read_csv("data/processed/tfidf_vectors.csv")
-st.write("Colonnes présentes :", df.columns.tolist())
 
 def predict_tech():
     """
@@ -130,6 +127,7 @@ def predict_tech():
         "predicted_tech": combined_pred,
         "confidence_score": global_confidence
     })
+    df_results.to_csv(output_file, index=False, sep=";")
 
 
 
