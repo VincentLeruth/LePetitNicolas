@@ -1,61 +1,56 @@
-import streamlit as st
-import git
+import subprocess
 import os
-import time
+import streamlit as st
 from urllib.parse import quote
+
+GITHUB_USER = "Nic0o00"
+GITHUB_REPO = "streamlit"
 
 def sync_repo(repo_path, push=False, pull=False):
     """
-    Synchronise le repo GitHub : pull et/ou push selon les paramètres.
+    Synchronise le repo GitHub via la ligne de commande Git.
     Authentification HTTPS via token GitHub et username.
     Affiche un message 'Synchronisation en cours...' dans Streamlit.
-
-    Parameters
-    ----------
-    repo_path : str
-        Chemin local vers le repo cloné.
-    push : bool
-        Si True, fait un push des modifications vers GitHub.
-    pull : bool
-        Si True, fait un pull depuis GitHub.
     """
     token = os.environ.get("GITHUB_TOKEN")
-    username = os.environ.get("GITHUB_USER")
-    if not token or not username:
-        st.warning("⚠️ Aucun token ou username GitHub trouvé dans les variables d'environnement.")
+    
+    if not token:
+        st.warning("⚠️ Aucun token GitHub trouvé dans les variables d'environnement.")
         return
-
-
+    
     with st.spinner("🔄 Synchronisation en cours avec GitHub..."):
         try:
-            repo = git.Repo(repo_path)
-            origin = repo.remotes.origin
-            original_url = origin.url
-            branch = repo.active_branch.name
-            # Encoder le token pour gérer les caractères spéciaux
-            encoded_token = quote(token)
-
-            # Construire l'URL HTTPS complète avec username + token
-            if original_url.startswith("https://"):
-                url_with_token = original_url.replace(
-                    "https://", f"https://{username}:{encoded_token}@"
-                )
-                origin.set_url(url_with_token)
-
+            # URL HTTPS complète avec token
+            url_cmd = f"https://{GITHUB_USER}:{quote(token)}@github.com/{GITHUB_USER}/{GITHUB_REPO}.git"
+            
+            # Détecter la branche actuelle
+            branch_result = subprocess.run(
+                ["git", "-C", repo_path, "rev-parse", "--abbrev-ref", "HEAD"],
+                capture_output=True, text=True, check=True
+            )
+            branch = branch_result.stdout.strip()
+            
             # Pull si demandé
             if pull:
-                origin.pull(refspec=f'{branch}:{branch}')
-
+                subprocess.run(
+                    ["git", "-C", repo_path, "pull", url_cmd, branch],
+                    check=True
+                )
+            
             # Push si demandé
             if push:
-                repo.git.add(all=True)
-                repo.index.commit("📤 Upload automatique depuis Streamlit")
-                origin.push(refspec='main:main')
-
-            # Rétablir l'URL originale
-            origin.set_url(original_url)
-
-            time.sleep(1)
+                # Ajouter tous les fichiers
+                subprocess.run(["git", "-C", repo_path, "add", "."], check=True)
+                
+                # Commit si nécessaire
+                subprocess.run(
+                    ["git", "-C", repo_path, "commit", "-m", "📤 Upload automatique depuis Streamlit"],
+                    check=False  # échoue silencieusement si rien à commit
+                )
+                
+                # Push vers GitHub
+                subprocess.run(["git", "-C", repo_path, "push", url_cmd, branch], check=True)
+            
             st.success("✅ Synchronisation terminée !")
-        except Exception as e:
-            st.error(f"❌ Erreur lors de la synchronisation : {e}")
+        except subprocess.CalledProcessError as e:
+            st.error(f"❌ Erreur Git : {e}")
