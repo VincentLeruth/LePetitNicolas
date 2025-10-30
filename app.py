@@ -65,8 +65,6 @@ elif st.session_state.page == "train":
     st.title("✅ Vérifications et Entraînement des modèles")
     st.write("👉 Ici tu peux labelliser les decks non traités et lancer l'entraînement des modèles.")
 
-    # 🔥 Appel du module d’entraînement (UI)
-    from ui.train import run_training_ui
     run_training_ui()
 
     # --- Bouton retour au menu ---

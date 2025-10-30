@@ -14,8 +14,6 @@ repo = g.get_repo(f"{st.secrets['GITHUB_USER']}/{st.secrets['GITHUB_REPO']}")
 
 
 def commit_file_to_github(local_path, repo_path, commit_message):
-    
-
     # Vérifie que le fichier existe localement
     if not os.path.exists(local_path):
         st.warning(f"Le fichier {local_path} n'existe pas localement.")

@@ -109,6 +109,7 @@ def predict_domain():
     })
 
     # --- Sauvegarde des résultats ---
+    out.to_csv(OUT_FILE, sep=";", index=False, encoding="utf-8")
     commit_file_to_github(
         local_file_path=OUT_FILE,  
         repo_path=OUT_FILE,       

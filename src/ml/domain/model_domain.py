@@ -185,6 +185,14 @@ def train_domain():
     os.path.join(MODELS_DIR, "domain_nonzero_columns.joblib")
     ]
     
+    joblib.dump(selector, files_to_commit[0])
+    joblib.dump(svd, files_to_commit[1])
+    joblib.dump(scaler, files_to_commit[2])
+    joblib.dump(centroids, files_to_commit[3])
+    joblib.dump(clf, files_to_commit[4])
+    joblib.dump(le, files_to_commit[5])
+    joblib.dump(nonzero_cols, files_to_commit[6])
+
     for file_path in files_to_commit:
         commit_file_to_github(
             local_file_path=file_path,

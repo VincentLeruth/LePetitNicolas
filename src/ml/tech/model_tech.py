@@ -140,10 +140,14 @@ def train_tech():
     clf.fit(X, y)
 
     # --- Sauvegarde du modèle ---
+
     model_path = os.path.join(models_dir, "lr_multilabel_techno_model.joblib")
+    joblib.dump(clf, model_path)
+
+    # --- Commit sur GitHub ---
     commit_file_to_github(
-        local_file_path=model_path,
-        repo_path=model_path,  # même chemin dans le repo GitHub
+        local_path=model_path,
+        repo_path="models/lr_multilabel_techno_model.joblib", 
         commit_message=f"Update {os.path.basename(model_path)}"
     )
     print(f"🚀 Modèle {os.path.basename(model_path)} commité sur GitHub avec succès !")

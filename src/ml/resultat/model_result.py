@@ -84,6 +84,7 @@ def train_result():
     print(classification_report(y_train_labels, y_pred))
 
     # --- Sauvegarde du modèle entraîné ---
+    joblib.dump(clf, MODEL_PATH)
     commit_file_to_github(
         local_file_path=MODEL_PATH,
         repo_path=MODEL_PATH,  # même chemin dans le repo GitHub

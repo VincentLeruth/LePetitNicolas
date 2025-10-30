@@ -111,9 +111,10 @@ def predict_country():
         df_results[f"proba_{class_name}"] = proba_all[:, idx]
 
     # --- Sauvegarde des résultats github ---
+    df_results.to_csv(output_file, sep=";", index=False, encoding="utf-8")
     commit_file_to_github(
         local_file_path=output_file,  
-        repo_path=output_file,        
+        repo_path=f"output/predictions/tfidf_vectors_with_country_predictions.csv",        
         commit_message="Update country prediction results"
     )
     print("🚀 Résultats pays committés sur GitHub avec succès !")

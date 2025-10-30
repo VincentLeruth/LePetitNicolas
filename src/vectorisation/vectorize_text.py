@@ -87,8 +87,9 @@ def vectorize_text():
 
     # --- Sauvegarde du CSV TF-IDF ---
     tfidf_df.to_csv(output_file, index=False, encoding="utf-8")
+
     commit_file_to_github(
-        local_file_path=output_file,
+        local_file_path = output_file,
         repo_path=f"data/processed/tfidf_vectors.csv",  
         commit_message=f"Update TF-IDF vectors file: {os.path.basename(output_file)}"
     )
