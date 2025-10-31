@@ -9,6 +9,8 @@ from src.ml.resultat.model_result import train_result
 
 from streamlit_pdf_viewer import pdf_viewer  
 
+from synchro_github import sync_repo
+
 
 # --- Chemins ---
 BASE_DIR = os.path.dirname(__file__)
@@ -61,6 +63,9 @@ def run_training_ui():
             train_tech()
             train_result()
             st.success("🎉 Tous les modèles ont été entraînés !")
+
+            sync_repo(BASE_DIR, push=True)
+
         return
 
     # --- Deck courant ---
