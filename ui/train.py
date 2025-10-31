@@ -65,8 +65,8 @@ def run_training_ui():
                 train_tech()
                 train_result()
             
-                st.success("🎉 Tous les modèles ont été entraînés !")
-            st.stop()
+            st.success("🎉 Tous les modèles ont été entraînés !")
+            st.info("🔄 Synchronisation GitHub en cours…")
             sync_repo(BASE_DIR, push=True)
 
         return
