@@ -32,12 +32,6 @@ if "comparison_done" not in st.session_state:
 if "saved_uploaded_files" not in st.session_state:
     st.session_state.saved_uploaded_files = False
 
-if "sync_pull_done" not in st.session_state:
-    st.session_state.sync_pull_done = False
-if "sync_push_done" not in st.session_state:
-    st.session_state.sync_push_done = False
-
-
 # --- Fonction de navigation entre pages ---
 def go_to(page_name):
     """
@@ -49,21 +43,11 @@ def go_to(page_name):
         Nom de la page à afficher ("menu", "train", "analyze").
     """
     if page_name == "menu":
-        # Réinitialisation complète
         st.session_state.clear()
         st.session_state.page = "menu"
-        
-        # 🔁 Réinitialiser les flags
-        st.session_state.sync_pull_done = False
-        st.session_state.sync_push_done = False
-
-        # 🧭 Pull automatique au retour au menu (une seule fois)
-        if not st.session_state.sync_pull_done:
-            sync_repo(BASE_DIR, push=False)
-            st.session_state.sync_pull_done = True
+        sync_repo(BASE_DIR, push=False)
     else:
         st.session_state.page = page_name
-
     st.rerun()
 
 # --- Menu principal ---
@@ -85,9 +69,7 @@ elif st.session_state.page == "train":
 
     run_training_ui()
 
-    if not st.session_state.sync_push_done:
-        sync_repo(BASE_DIR, push=True)
-        st.session_state.sync_push_done = True
+    sync_repo(BASE_DIR, push=True)
 
     # --- Bouton retour au menu ---
     st.markdown("---")
@@ -119,9 +101,7 @@ elif st.session_state.page == "analyze":
         if saved_files_names:
             display_prediction_results(saved_files_names)
 
-            if not st.session_state.sync_push_done:
-                sync_repo(BASE_DIR, push=True)
-                st.session_state.sync_push_done = True
+            sync_repo(BASE_DIR, push=True)
 
     # --- Sélection d'un deck via sidebar pour affichage spécifique ---
     deck_files = [f for f in os.listdir(DECKS_DIR) if f.lower().endswith(".pdf")]
