@@ -100,6 +100,9 @@ elif st.session_state.page == "analyze":
         saved_files_names = st.session_state.get("uploaded_files_saved_names", [])
         if saved_files_names:
             display_prediction_results(saved_files_names)
+    if not st.session_state.get("pushed_after_analysis", False):
+            sync_repo(BASE_DIR, push=True)
+            st.session_state.pushed_after_analysis = True
 
     # --- Sélection d'un deck via sidebar pour affichage spécifique ---
     deck_files = [f for f in os.listdir(DECKS_DIR) if f.lower().endswith(".pdf")]
@@ -111,9 +114,6 @@ elif st.session_state.page == "analyze":
 
     # --- Bouton retour menu ---
     if st.button("⬅️ Retour au menu principal"):
-        if not st.session_state.get("pushed_after_analysis", False):
-                sync_repo(BASE_DIR, push=True)
-                st.session_state.pushed_after_analysis = True
         go_to("menu")
 
 # --- Footer avec logo ---
