@@ -110,7 +110,7 @@ elif st.session_state.page == "analyze":
         display_prediction_results(selected_file.split(sep=None, maxsplit=-1))
 
     # --- Bouton retour menu ---
-    if st.button("⬅️ Retour au menu principal"):
+    if st.button("⬅️ Enregistrer et retourner au menu principal"):
         if not st.session_state.get("pushed_after_analysis", False):
                 sync_repo(BASE_DIR, push=True)
                 st.session_state.pushed_after_analysis = True
