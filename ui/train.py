@@ -62,9 +62,10 @@ def run_training_ui():
                 train_country()
                 train_tech()
                 train_result()
-
-                sync_repo(BASE_DIR, push=True)
+            
             st.success("🎉 Tous les modèles ont été entraînés !")
+
+            sync_repo(BASE_DIR, push=True)
 
         return
 
