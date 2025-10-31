@@ -20,42 +20,39 @@ def sync_repo(repo_path, push=False):
         return
     
     with st.spinner("🔄 Synchronisation en cours avec GitHub..."):
-        try:
-            # Construire l'URL HTTPS complète avec token
-            url_cmd = f"https://{GITHUB_USER}:{quote(token)}@github.com/{GITHUB_USER}/{GITHUB_REPO}.git"
-            
-            # Détecter la branche actuelle
-            branch_result = subprocess.run(
-                ["git", "-C", repo_path, "rev-parse", "--abbrev-ref", "HEAD"],
-                capture_output=True, text=True, check=True
-            )
-            branch = branch_result.stdout.strip()
+        # Construire l'URL HTTPS complète avec token
+        url_cmd = f"https://{GITHUB_USER}:{quote(token)}@github.com/{GITHUB_USER}/{GITHUB_REPO}.git"
+        
+        # Détecter la branche actuelle
+        branch_result = subprocess.run(
+            ["git", "-C", repo_path, "rev-parse", "--abbrev-ref", "HEAD"],
+            capture_output=True, text=True, check=True
+        )
+        branch = branch_result.stdout.strip()
 
-            # ⚙️ Configurer temporairement l'identité Git pour ce dépôt
-            subprocess.run(["git", "-C", repo_path, "config", "user.name", "Streamlit Bot"], check=True)
-            subprocess.run(["git", "-C", repo_path, "config", "user.email", "bot@localhost"], check=True)
+        # ⚙️ Configurer temporairement l'identité Git pour ce dépôt
+        subprocess.run(["git", "-C", repo_path, "config", "user.name", "Streamlit Bot"], check=True)
+        subprocess.run(["git", "-C", repo_path, "config", "user.email", "bot@localhost"], check=True)
+        
+        # Pull si demandé
+        if push == False:
+            subprocess.run(
+                ["git", "-C", repo_path, "pull", url_cmd, branch],
+                check=True
+            )
+        
+        # Push si demandé
+        if push == True:
+            # Ajouter tous les fichiers
+            subprocess.run(["git", "-C", repo_path, "add", "."], check=True)
             
-            # Pull si demandé
-            if push == False:
-                subprocess.run(
-                    ["git", "-C", repo_path, "pull", url_cmd, branch],
-                    check=True
-                )
+            # Commit si nécessaire
+            subprocess.run(
+                ["git", "-C", repo_path, "commit", "-m", "📤 Upload automatique depuis Streamlit"],
+                check=False  # échoue silencieusement si rien à commit
+            )
             
-            # Push si demandé
-            if push == True:
-                # Ajouter tous les fichiers
-                subprocess.run(["git", "-C", repo_path, "add", "."], check=True)
-                
-                # Commit si nécessaire
-                subprocess.run(
-                    ["git", "-C", repo_path, "commit", "-m", "📤 Upload automatique depuis Streamlit"],
-                    check=False  # échoue silencieusement si rien à commit
-                )
-                
-                # Push vers GitHub
-                subprocess.run(["git", "-C", repo_path, "push", url_cmd, branch], check=True)
-            
-            st.success("✅ Synchronisation terminée !")
-        except subprocess.CalledProcessError as e:
-            st.error(f"❌ Erreur Git : {e}")
+            # Push vers GitHub
+            subprocess.run(["git", "-C", repo_path, "push", url_cmd, branch], check=True)
+        
+        st.success("✅ Synchronisation terminée !")
