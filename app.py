@@ -68,6 +68,8 @@ elif st.session_state.page == "train":
     st.write("👉 Ici tu peux labelliser les decks non traités et lancer l'entraînement des modèles.")
 
     run_training_ui()
+    
+    sync_repo(BASE_DIR, push=True)
 
     # --- Bouton retour au menu ---
     st.markdown("---")

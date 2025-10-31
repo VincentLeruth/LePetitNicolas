@@ -73,19 +73,15 @@ def run_training_ui():
         if st.button("🧠 Entraîner tous les modèles"):
             
             # Spinner pendant entraînement et sync
-            with st.spinner("⏳ Entraînement et synchronisation GitHub en cours..."):
+            with st.spinner("⏳ Entraînement en cours..."):
                 vectorize_text()
                 train_domain()
                 train_country()
                 train_tech()
                 train_result()
-                
-                sync_repo(BASE_DIR, push=True)
-                
-                # Marquer push effectué
 
-            st.success("🎉 Tous les modèles ont été entraînés et poussés sur GitHub !")
-        return
+            st.success("🎉 Tous les modèles ont été entraînés  !")
+        
 
     # --- Deck courant ---
     current_deck = st.session_state.remaining_decks[0]
