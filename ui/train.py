@@ -58,13 +58,13 @@ def run_training_ui():
     if not st.session_state.remaining_decks:
         st.success("✅ Tous les decks ont été labellisés !")
         if st.button("🧠 Entraîner tous les modèles"):
-            with st.spinner("⏳ Entraînement en cours..."):
-                vectorize_text()
-                train_domain()
-                train_country()
-                train_tech()
-                train_result()
-            
+            st.info("⏳ Entraînement en cours...")
+            vectorize_text()
+            train_domain()
+            train_country()
+            train_tech()
+            train_result()
+        
             st.success("🎉 Tous les modèles ont été entraînés !")
             st.info("🔄 Synchronisation GitHub en cours…")
             sync_repo(BASE_DIR, push=True)
