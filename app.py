@@ -45,6 +45,8 @@ def go_to(page_name):
     if page_name == "menu":
         st.session_state.clear()
         st.session_state.page = "menu"
+        st.session_state.sync_done = False
+        
         sync_repo(BASE_DIR, push=False)
     else:
         st.session_state.page = page_name
@@ -69,7 +71,9 @@ elif st.session_state.page == "train":
 
     run_training_ui()
 
-    sync_repo(BASE_DIR, push=True)
+    if not st.session_state.sync_done:
+        sync_repo(BASE_DIR, push=True)
+        st.session_state.sync_done = True
 
     # --- Bouton retour au menu ---
     st.markdown("---")
@@ -101,7 +105,9 @@ elif st.session_state.page == "analyze":
         if saved_files_names:
             display_prediction_results(saved_files_names)
 
-            sync_repo(BASE_DIR, push=True)
+            if not st.session_state.sync_done:
+                sync_repo(BASE_DIR, push=True)
+                st.session_state.sync_done = True
 
     # --- Sélection d'un deck via sidebar pour affichage spécifique ---
     deck_files = [f for f in os.listdir(DECKS_DIR) if f.lower().endswith(".pdf")]

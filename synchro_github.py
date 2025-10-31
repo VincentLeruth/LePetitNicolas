@@ -7,12 +7,18 @@ from urllib.parse import quote
 GITHUB_USER = "Nic0o00"
 GITHUB_REPO = "streamlit"
 
+if "sync_done" not in st.session_state:
+    st.session_state.sync_done = False
+
 def sync_repo(repo_path, push=False):
     """
     Synchronise le repo GitHub via la ligne de commande Git.
     Authentification HTTPS via token GitHub et username.
     Configure temporairement user.name et user.email pour permettre les commits automatiques.
     """
+    if st.session_state.sync_done:
+        return  # ⛔️ déjà synchronisé dans ce cycle
+    
     token = os.environ.get("GITHUB_TOKEN")
     
     if not token:
@@ -56,6 +62,7 @@ def sync_repo(repo_path, push=False):
                 # Push vers GitHub
                 subprocess.run(["git", "-C", repo_path, "push", url_cmd, branch], check=True)
             
+            st.session_state.sync_done = True
             st.success("✅ Synchronisation terminée !")
         except subprocess.CalledProcessError as e:
             st.error(f"❌ Erreur Git : {e}")
