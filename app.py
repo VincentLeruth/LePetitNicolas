@@ -112,8 +112,8 @@ elif st.session_state.page == "analyze":
     # --- Bouton retour menu ---
     if st.button("⬅️ Enregistrer et retourner au menu principal"):
         if not st.session_state.get("pushed_after_analysis", False):
-                sync_repo(BASE_DIR, push=True)
-                st.session_state.pushed_after_analysis = True
+            sync_repo(BASE_DIR, push=True)
+            st.session_state.pushed_after_analysis = True
         go_to("menu")
 
 # --- Footer avec logo ---
