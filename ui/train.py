@@ -57,14 +57,14 @@ def run_training_ui():
     if not st.session_state.remaining_decks:
         st.success("✅ Tous les decks ont été labellisés !")
         if st.button("🧠 Entraîner tous les modèles"):
-            st.info("⏳ Entraînement en cours...")
-            train_domain()
-            train_country()
-            train_tech()
-            train_result()
-            st.success("🎉 Tous les modèles ont été entraînés !")
+            with st.spinner("⏳ Entraînement en cours..."):
+                train_domain()
+                train_country()
+                train_tech()
+                train_result()
 
-            sync_repo(BASE_DIR, push=True)
+                sync_repo(BASE_DIR, push=True)
+            st.success("🎉 Tous les modèles ont été entraînés !")
 
         return
 
