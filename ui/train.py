@@ -81,7 +81,7 @@ def run_training_ui():
                 train_result()
 
             st.success("🎉 Tous les modèles ont été entraînés  !")
-        
+        return
 
     # --- Deck courant ---
     current_deck = st.session_state.remaining_decks[0]
