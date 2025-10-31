@@ -45,7 +45,6 @@ def go_to(page_name):
     if page_name == "menu":
         st.session_state.clear()
         st.session_state.page = "menu"
-        sync_repo(BASE_DIR, push=False)
     else:
         st.session_state.page = page_name
     st.rerun()
@@ -57,9 +56,11 @@ if st.session_state.page == "menu":
     col1, col2 = st.columns(2)
     with col1:
         if st.button("🧠 Entraîner les modèles"):
+            sync_repo(BASE_DIR, push=False)
             go_to("train")
     with col2:
         if st.button("📊 Analyser un ou plusieurs decks"):
+            sync_repo(BASE_DIR, push=False)
             go_to("analyze")
 
 # --- Page entraînement ---
