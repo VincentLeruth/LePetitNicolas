@@ -99,7 +99,7 @@ def run_training_ui():
         tech_default = default_vals.get("tech", TECHS[0])
         domain_default = default_vals.get("domain", DOMAINS[0])
         country_default = default_vals.get("country", COUNTRIES[0])
-        result_default = default_vals.get("result", RESULTS[0])
+        result_default = default_vals.get("resultat", RESULTS[0])
 
         # --- Sélecteurs pour labellisation ---
         tech = st.selectbox("🧠 Technologie", TECHS, index=TECHS.index(tech_default))
@@ -117,14 +117,14 @@ def run_training_ui():
                     "tech": tech,
                     "domain": domain,
                     "country": country,
-                    "result": result
+                    "resultat": result
                 }
                 new_row = pd.DataFrame([{
                     "doc": current_deck,
                     "tech": tech,
                     "domain": domain,
                     "country": country,
-                    "result": result
+                    "resultat": result
                 }])
                 labeled_df = pd.concat([labeled_df, new_row], ignore_index=True)
                 labeled_df.to_csv(LABELED_CSV, sep=";", index=False)
