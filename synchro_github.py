@@ -3,56 +3,42 @@ import os
 import streamlit as st
 from urllib.parse import quote
 
-# ⚙️ À modifier selon ton compte GitHub
-GITHUB_USER = "Nic0o00"
-GITHUB_REPO = "streamlit"
+# ⚙️ Récupérer le user et le repo depuis les variables d'environnement ou secrets Streamlit
+GITHUB_USER = os.environ.get("GITHUB_USER") or st.secrets.get("GITHUB_USER")
+GITHUB_REPO = os.environ.get("GITHUB_REPO") or st.secrets.get("GITHUB_REPO")
+TOKEN = os.environ.get("GITHUB_TOKEN") or st.secrets.get("GITHUB_TOKEN")
 
 def sync_repo(repo_path, push=False):
     """
-    Synchronise le repo GitHub via la ligne de commande Git.
-    Authentification HTTPS via token GitHub et username.
-    Configure temporairement user.name et user.email pour permettre les commits automatiques.
+    Synchronise un dépôt Git local avec GitHub via la ligne de commande Git.
+    Pull ou push automatique selon le paramètre `push`.
     """
-    token = os.environ.get("GITHUB_TOKEN")
     
-    if not token:
-        st.warning("⚠️ Aucun token GitHub trouvé dans les variables d'environnement.")
+    
+    if not TOKEN:
+        st.warning("⚠️ Aucun token GitHub trouvé dans les variables d'environnement ou secrets.")
         return
     
     with st.spinner("🔄 Synchronisation en cours avec GitHub..."):
-        # Construire l'URL HTTPS complète avec token
-        url_cmd = f"https://{GITHUB_USER}:{quote(token)}@github.com/{GITHUB_USER}/{GITHUB_REPO}.git"
+        url_cmd = f"https://{GITHUB_USER}:{quote(TOKEN)}@github.com/{GITHUB_USER}/{GITHUB_REPO}.git"
         
-        # Détecter la branche actuelle
         branch_result = subprocess.run(
             ["git", "-C", repo_path, "rev-parse", "--abbrev-ref", "HEAD"],
             capture_output=True, text=True, check=True
         )
         branch = branch_result.stdout.strip()
 
-        # ⚙️ Configurer temporairement l'identité Git pour ce dépôt
         subprocess.run(["git", "-C", repo_path, "config", "user.name", "Streamlit Bot"], check=True)
         subprocess.run(["git", "-C", repo_path, "config", "user.email", "bot@localhost"], check=True)
         
-        # Pull si demandé
-        if push == False:
-            subprocess.run(
-                ["git", "-C", repo_path, "pull", url_cmd, branch],
-                check=True
-            )
-        
-        # Push si demandé
-        if push == True:
-            # Ajouter tous les fichiers
+        if not push:
+            subprocess.run(["git", "-C", repo_path, "pull", url_cmd, branch], check=True)
+        else:
             subprocess.run(["git", "-C", repo_path, "add", "."], check=True)
-            
-            # Commit si nécessaire
             subprocess.run(
                 ["git", "-C", repo_path, "commit", "-m", "📤 Upload automatique depuis Streamlit"],
-                check=False  # échoue silencieusement si rien à commit
+                check=False
             )
-            
-            # Push vers GitHub
             subprocess.run(["git", "-C", repo_path, "push", url_cmd, branch], check=True)
         
         st.success("✅ Synchronisation terminée !")

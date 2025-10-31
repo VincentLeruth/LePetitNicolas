@@ -109,7 +109,7 @@ def train_country():
             print(classification_report(y, y_pred, target_names=le.classes_, zero_division=0))
         except Exception as e:
             print(f"cross_val_predict a échoué ({type(e).__name__}): {e}")
-            print("→ On passera directement à l'entraînement final sans CV.")
+            print(" On passera directement à l'entraînement final sans CV.")
     else:
         print("Cross-validation skipped: pas assez d'exemples par classe pour n_splits>=2.")
 
@@ -124,9 +124,6 @@ def train_country():
 
     joblib.dump(model, files_to_commit[0])
     joblib.dump(le, files_to_commit[1])
-
-   
-
 
 # --- Point d'entrée principal ---
 if __name__ == "__main__":
