@@ -28,7 +28,7 @@ def train_result():
     """
 
     # --- Charger vecteurs et labels ---
-    print("📥 Chargement des données...")
+    print("Chargement des données...")
     X = pd.read_csv(VECT_CSV, sep=";", encoding="utf-8")
     df_labels = pd.read_csv(LABELED_CSV, sep=";", encoding="utf-8")
 
@@ -50,7 +50,7 @@ def train_result():
     missing_in_labels = docs_X - docs_labels
     missing_in_vectors = docs_labels - docs_X
 
-    print(f"\n📊 Diagnostic correspondances :")
+    print(f"\nDiagnostic correspondances :")
     print(f" - {len(missing_in_labels)} documents TF-IDF sans label")
     print(f" - {len(missing_in_vectors)} labels sans vecteurs TF-IDF\n")
 
@@ -65,19 +65,19 @@ def train_result():
     
 
     if df_merged.empty:
-        raise ValueError("❌ Aucun document commun entre tfidf_vectors.csv et labeled.csv.")
+        raise ValueError("Aucun document commun entre tfidf_vectors.csv et labeled.csv.")
 
-    print(f"✅ Fusion réussie : {len(df_merged)} documents alignés.")
+    print(f"Fusion réussie : {len(df_merged)} documents alignés.")
     print(f"Colonnes disponibles après merge : {df_merged.columns.tolist()}")
 
     # --- Préparation des données d'entraînement ---
     X_train_vectors = df_merged.drop(columns=["doc", "resultat"])
     y_train_labels = df_merged["resultat"]
 
-    print(f"\n📦 Données prêtes : X shape = {X_train_vectors.shape}, y length = {len(y_train_labels)}")
+    print(f"\nDonnées prêtes : X shape = {X_train_vectors.shape}, y length = {len(y_train_labels)}")
 
     # --- Entraînement du modèle RandomForest ---
-    print("\n🚀 Entraînement du modèle Random Forest...")
+    print("\nEntraînement du modèle Random Forest...")
     clf = RandomForestClassifier(
         n_estimators=500,
         class_weight="balanced",
@@ -94,7 +94,7 @@ def train_result():
     # --- Sauvegarde du modèle ---
     os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
     joblib.dump(clf, MODEL_PATH)
-    print(f"\n💾 Modèle sauvegardé dans : {MODEL_PATH}")
+    print(f"\nModèle sauvegardé dans : {MODEL_PATH}")
 
 
 # --- Point d’entrée du script ---
