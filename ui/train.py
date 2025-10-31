@@ -16,7 +16,7 @@ DECKS_DIR = os.path.join(BASE_DIR, "..", "data", "decks")
 LABELED_CSV = os.path.join(BASE_DIR, "..", "data", "labeled.csv")
 
 # --- Choix possibles pour chaque axe ---
-DOMAINS = ["energy transition", "industrie 4.0", "new materials", "others"]
+DOMAINS = ["energy transition", "industry 4.0", "new materials", "others"]
 COUNTRIES = ["benelux", "france", "germany", "other"]
 TECHS = ["soft", "hard", "both"]
 RESULTS = ["Unfavorable", "Very Unfavorable", "Interesting", "Out"]
