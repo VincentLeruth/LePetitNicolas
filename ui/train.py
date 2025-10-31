@@ -70,7 +70,7 @@ def run_training_ui():
         st.success("✅ Tous les decks ont été labellisés !")
         
         # --- Bouton pour entraîner tous les modèles ---
-        if st.button("🧠 Entraîner tous les modèles") and not st.session_state.get("pushed_after_training", False):
+        if st.button("🧠 Entraîner tous les modèles"):
             
             # Spinner pendant entraînement et sync
             with st.spinner("⏳ Entraînement et synchronisation GitHub en cours..."):
@@ -83,7 +83,6 @@ def run_training_ui():
                 sync_repo(BASE_DIR, push=True)
                 
                 # Marquer push effectué
-                st.session_state.pushed_after_training = True
 
             st.success("🎉 Tous les modèles ont été entraînés et poussés sur GitHub !")
         return
