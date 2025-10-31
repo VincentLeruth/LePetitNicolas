@@ -71,6 +71,7 @@ elif st.session_state.page == "train":
 
     sync_repo(BASE_DIR, push=True)
 
+
     # --- Bouton retour au menu ---
     st.markdown("---")
     if st.button("⬅️ Retour au menu principal"):
@@ -101,7 +102,9 @@ elif st.session_state.page == "analyze":
         if saved_files_names:
             display_prediction_results(saved_files_names)
 
-            sync_repo(BASE_DIR, push=True)
+            if not st.session_state.get("pushed_after_analysis", False):
+                sync_repo(BASE_DIR, push=True)
+                st.session_state.pushed_after_analysis = True
 
     # --- Sélection d'un deck via sidebar pour affichage spécifique ---
     deck_files = [f for f in os.listdir(DECKS_DIR) if f.lower().endswith(".pdf")]
