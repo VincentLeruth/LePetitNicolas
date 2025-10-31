@@ -2,6 +2,7 @@ import os
 import streamlit as st
 import pandas as pd
 
+from src.vectorisation.vectorize_text import vectorize_text
 from src.ml.domain.model_domain import train_domain
 from src.ml.country.model_country import train_country
 from src.ml.tech.model_tech import train_tech
@@ -58,6 +59,7 @@ def run_training_ui():
         st.success("✅ Tous les decks ont été labellisés !")
         if st.button("🧠 Entraîner tous les modèles"):
             with st.spinner("⏳ Entraînement en cours..."):
+                vectorize_text()
                 train_domain()
                 train_country()
                 train_tech()
