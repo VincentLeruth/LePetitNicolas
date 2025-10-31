@@ -69,6 +69,7 @@ elif st.session_state.page == "train":
 
     run_training_ui()
 
+    sync_repo(BASE_DIR, push=True)
 
     # --- Bouton retour au menu ---
     st.markdown("---")

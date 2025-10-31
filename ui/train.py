@@ -10,7 +10,6 @@ from src.ml.resultat.model_result import train_result
 
 from streamlit_pdf_viewer import pdf_viewer  
 
-from synchro_github import sync_repo
 
 
 # --- Chemins ---
@@ -67,7 +66,6 @@ def run_training_ui():
         
             st.success("🎉 Tous les modèles ont été entraînés !")
             st.info("🔄 Synchronisation GitHub en cours…")
-            sync_repo(BASE_DIR, push=True)
 
         return
 
