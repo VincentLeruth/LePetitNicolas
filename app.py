@@ -13,7 +13,7 @@ from ui.train import run_training_ui
 from synchro_github import sync_repo
 
 # --- Chemins ---
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+BASE_DIR = os.path.dirname(__file__)
 DECKS_DIR = os.path.join(BASE_DIR, "data", "decks")
 TRANSLATED_DIR = os.path.join(BASE_DIR, "data", "processed", "translated")
 
