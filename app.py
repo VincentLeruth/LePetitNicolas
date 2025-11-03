@@ -70,11 +70,11 @@ elif st.session_state.page == "train":
 
     run_training_ui()
     
-    sync_repo(BASE_DIR, push=True)
 
     # --- Bouton retour au menu ---
     st.markdown("---")
     if st.button("⬅️ Retour au menu principal"):
+        sync_repo(BASE_DIR, push=True)
         go_to("menu")
 
 
