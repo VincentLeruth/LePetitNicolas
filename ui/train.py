@@ -145,6 +145,10 @@ def run_training_ui():
         pdf_path = os.path.join(DECKS_DIR, current_deck)
         st.markdown("### 👀 Aperçu du deck")
         if os.path.exists(pdf_path):
-            pdf_viewer(pdf_path, width="100%", height=800, zoom_level="page-width")
+            pdf_viewer(pdf_path, 
+                       width="100%", 
+                       height=800, 
+                       zoom_level=None
+                       )
         else:
             st.warning("⚠️ Fichier PDF introuvable dans le dossier 'data/decks'.")
