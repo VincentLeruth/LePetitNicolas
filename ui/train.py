@@ -1,6 +1,7 @@
 import os
 import streamlit as st
 import pandas as pd
+import base64
 
 from src.vectorisation.vectorize_text import vectorize_text
 from src.ml.domain.model_domain import train_domain
@@ -144,7 +145,20 @@ def run_training_ui():
         # --- Affichage PDF ---
         pdf_path = os.path.join(DECKS_DIR, current_deck)
         st.markdown("### 👀 Aperçu du deck")
+
         if os.path.exists(pdf_path):
-            pdf_viewer(pdf_path, width="80%", height=800, zoom_level=1.0)
+            # Affichage dynamique du PDF
+            with open(pdf_path, "rb") as f:
+                base64_pdf = base64.b64encode(f.read()).decode("utf-8")
+
+            pdf_display = f"""
+                <iframe
+                    src="data:application/pdf;base64,{base64_pdf}"
+                    width="100%"
+                    height="1000"
+                    style="border:none; min-height:80vh;"
+                ></iframe>
+            """
+            st.markdown(pdf_display, unsafe_allow_html=True)
         else:
             st.warning("⚠️ Fichier PDF introuvable dans le dossier 'data/decks'.")
