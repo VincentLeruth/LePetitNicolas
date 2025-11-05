@@ -55,7 +55,7 @@ if st.session_state.page == "menu":
     st.subheader("Choisissez une action :")
     col1, col2 = st.columns(2)
     with col1:
-        if st.button("🧠 Entraîner les modèles \n La abse de données possède : " + str(len(os.listdir(DECKS_DIR)) + "decks")):
+        if st.button("🧠 Entraîner les modèles \n La abse de données possède : " + str(len(os.listdir(DECKS_DIR))) + "decks"):
             sync_repo(BASE_DIR, push=False)
             go_to("train")
     with col2:
