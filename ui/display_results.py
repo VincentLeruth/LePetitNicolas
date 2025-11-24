@@ -47,10 +47,10 @@ def display_prediction_results(uploaded_saved_names):
     # --- Renommage propre ---
     df.rename(columns={
         "doc": "Fichier",
-        "predicted_domain": "Domaine",
-        "predicted_country": "Pays",
-        "predicted_tech": "Technologie",
-        "predicted_resultat": "Resultat"
+        "domain": "Domaine",
+        "country": "Pays",
+        "tech": "Technologie",
+        "resultat": "Resultat"
     }, inplace=True)
 
     # --- Filtrer uniquement les fichiers réellement sauvegardés ---
