@@ -27,7 +27,7 @@ def display_prediction_results(uploaded_saved_names):
     st.subheader("📊 Résultats des prédictions par fichier uploadé")
 
     # --- Chemin vers le fichier centralisé ---
-    labeled_path = os.path.join(BASE_DIR, "data", "labeled.csv")
+    labeled_path = os.path.join(BASE_DIR, "..", "data", "labeled.csv")
 
     # --- Chargement du fichier ---
     try:
