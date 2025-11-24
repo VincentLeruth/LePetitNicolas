@@ -37,7 +37,7 @@ def display_prediction_results(uploaded_saved_names):
         return
 
     # --- Vérification présence colonnes requises ---
-    required_cols = ["doc", "predicted_domain", "predicted_country", "predicted_tech", "predicted_resultat"]
+    required_cols = ["doc", "tech", "domain", "country", "resultat"]
     missing = [c for c in required_cols if c not in df.columns]
 
     if missing:
